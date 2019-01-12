@@ -192,7 +192,7 @@ These are the rules resulting of current configuration in `eslintrc.js`
     "plugin:react/recommended",
     "prettier"
   ],
-  "parser": "/Users/usuario/dry-linter/node_modules/babel-eslint/lib/index.js"
+  "parser": "/Users/usuario/front-linter/node_modules/babel-eslint/lib/index.js"
 }
 ```
 

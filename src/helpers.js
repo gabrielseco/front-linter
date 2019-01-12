@@ -26,7 +26,9 @@ function executeLintingCommand(binPath, args) {
   const [, , ...processArgs] = filterOptionFlags(process.argv);
 
   if (processArgs.find(arg => arg === '-c' || arg === '--config')) {
-    console.log('[dry-linter] Dont use your own config file. Remove `-c` flag');
+    console.log(
+      '[front-linter] Dont use your own config file. Remove `-c` flag'
+    );
     process.exit(1);
   }
   return getSpawnPromise(binPath, args.concat(processArgs)).catch(showError);

@@ -1,4 +1,4 @@
-# dry-linter
+# front-linter
 
 > CLI to lint your code and make it compliant.
 
@@ -13,17 +13,17 @@ This package is a fork of [SUI](https://github.com/SUI-Components/sui/blob/maste
 ## Installation
 
 ```sh
-$ npm install dry-linter --save-dev
+$ npm install @dry/front-linter --save-dev
 ```
 
 ## CLI
 
-When installed, a new CLI `dry-linter` is automatically available to lint your files according to the conventions.
+When installed, a new CLI `front-linter` is automatically available to lint your files according to the conventions.
 
 ### Lint JS files
 
 ```sh
-$ dry-linter js [options]
+$ front-linter js [options]
 ```
 
 It lints all `js|jsx` files in your project, excluding `.eslintignore` and `.gitignore` file patterns.
@@ -35,13 +35,13 @@ Same options available in [eslint](https://eslint.org/docs/user-guide/command-li
 ### Format JS files
 
 ```sh
-$ dry-linter js --fix [options]
+$ front-linter js --fix [options]
 ```
 
 ### Lint SASS files
 
 ```
-$ dry-linter sass [options]
+$ front-linter sass [options]
 ```
 
 Lints all `**/src/**/*.scss` files in the project, excluding `node_modules`, `lib`, `dist`, `public`.
@@ -51,30 +51,30 @@ Lints all `**/src/**/*.scss` files in the project, excluding `node_modules`, `li
 ### Scope commands to staged files
 
 ```sh
-$ dry-linter js --staged
-$ dry-linter js --fix --staged
+$ front-linter js --staged
+$ front-linter js --fix --staged
 ```
 
 Same command but applied only on staged files (obtained with `git diff --cached --name-only --diff-filter=d` command).
 
-For integrations, prettier config is located in `dry-linter/lint/.prettierrc.js`.
+For integrations, prettier config is located in `@dry/front-linter/lint/.prettierrc.js`.
 
 ### Add fixes to the stage
 
 ```sh
-$ dry-linter js --staged --add-fixes
-$ dry-linter js --fix --staged --add-fixes
+$ front-linter js --staged --add-fixes
+$ front-linter js --fix --staged --add-fixes
 ```
 
 This option can only be used with `--staged`.
 
-In fix mode like with `dry-linter js --fix`, the `--add-fixes` option will stage the files again (`git add <file...>`)
+In fix mode like with `front-linter js --fix`, the `--add-fixes` option will stage the files again (`git add <file...>`)
 
 It's usefull to make your code autoformat before any commit.
 
 ## IDE integration
 
-Steps to integrate dry-linter with an IDE:
+Steps to integrate front-linter with an IDE:
 
 1.  Install (if needed) eslint/sassLint plugin in your IDE.
 2.  Add these lines to `package.json`:
@@ -82,11 +82,11 @@ Steps to integrate dry-linter with an IDE:
 ```json
 {
   "eslintConfig": {
-    "extends": ["./node_modules/dry-linter/eslintrc.js"]
+    "extends": ["./node_modules/@dry/front-linter/eslintrc.js"]
   },
   "stylelint": {
     "extends": [
-      "./node_modules/dry-linter/.stylelintrc.json"
+      "./node_modules/@dry/front-linter/.stylelintrc.json"
     ]
   }
 }
@@ -100,15 +100,15 @@ Steps to integrate dry-linter with an IDE:
   "version": "1.0.0",
   "scripts": {
     "lint": "npm run lint:js",
-    "lint:js": "dry-linter js"
+    "lint:js": "front-linter js"
   },
   "devDependencies": {
-    "dry-linter": "1.0.0"
+    "front-linter": "1.0.0"
   },
-  "eslintConfig": { "extends": ["./node_modules/dry-linter/eslintrc.js"] },
+  "eslintConfig": { "extends": ["./node_modules/@dry/front-linter/eslintrc.js"] },
   "stylelint": {
     "extends": [
-      "./node_modules/dry-linter/.stylelintrc.json"
+      "./node_modules/@dry/front-linter/.stylelintrc.json"
     ]
   }
 }
@@ -116,8 +116,8 @@ Steps to integrate dry-linter with an IDE:
 
 ### VSCode and prettier
 
-Prettier is integrated in dry-linter thanks to specific eslint rules.
-If you want VSCode to format your code exactly as `dry-linter js --fix` would do, you need specific config.+
+Prettier is integrated in front-linter thanks to specific eslint rules.
+If you want VSCode to format your code exactly as `front-linter js --fix` would do, you need specific config.+
 
 #### prettier + eslint
 
@@ -133,7 +133,7 @@ By adding this line to your settings
 
 when you do `CMD + Shift + P -> Format Document` the format tool will use [`prettier-eslint`](https://github.com/prettier/prettier-eslint)^[`prettier-eslint` is a dependency of [prettier-vscode](https://github.com/prettier/prettier-vscode/blob/1843acb5defac7898862a1df61cb67c7a8355d69/package.json#L204)] that will do a [`eslint --fix`](http://eslint.org/) after formatting your JavaScript file with [`prettier`](https://github.com/prettier/prettier)
 
-So this shortcut will format our files ( w/ _prettier_) according to our `dry-linter` rules
+So this shortcut will format our files ( w/ _prettier_) according to our `front-linter` rules
 
 > you will need the `eslintConfig` property added to the `package.json` as explained above
 

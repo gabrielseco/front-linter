@@ -27,5 +27,5 @@ getFilesToLint(EXTENSIONS).then(
       ]).then(
         () => isOptionSet('--fix') && stageFilesIfRequired(EXTENSIONS)
       )) ||
-    console.log('[dry-linter js] No javascript files to lint.')
+    console.log('[front-linter js] No javascript files to lint.')
 );

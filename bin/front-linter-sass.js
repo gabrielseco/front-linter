@@ -22,5 +22,5 @@ getFilesToLint(EXTENSIONS, '**/src/**/*.scss').then(
         `'${patterns.join(', ')}'`,
         `'${files.join(', ')}'`
       ])) ||
-    console.log('[dry-linter sass] No sass files to lint.')
+    console.log('[front-linter sass] No sass files to lint.')
 );
