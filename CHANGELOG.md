@@ -10,7 +10,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 ### Removed
 
-## [1.0.0-beta.0] - 2019-01-14
+## [1.0.0-beta.1] - 2019-01-20
+### Fixed
+
+- Fixed some readme typos
+- Lint all scss files not only in src
+
+## [1.0.0-beta.0] - 2019-01-20
 ### Added
 - Forked from https://github.com/SUI-Components/sui/blob/master/packages/sui-lint, version 2.20.0
 - Add self linter. Add pre-commit hook.

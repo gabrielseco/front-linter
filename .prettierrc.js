@@ -6,7 +6,7 @@ module.exports = {
   bracketSpacing: true,
   semi: true,
   useTabs: false,
-  parser: 'babylon',
+  parser: 'babel',
   jsxBracketSameLine: false,
   arrowParens: 'avoid'
 };

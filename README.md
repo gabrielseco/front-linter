@@ -76,7 +76,7 @@ It's usefull to make your code autoformat before any commit.
 
 Steps to integrate front-linter with an IDE:
 
-1.  Install (if needed) eslint/sassLint plugin in your IDE.
+1.  Install (if needed) eslint/stylelint plugin in your IDE.
 2.  Add these lines to `package.json`:
 
 ```json
@@ -99,11 +99,11 @@ Steps to integrate front-linter with an IDE:
   "name": "test-project",
   "version": "1.0.0",
   "scripts": {
-    "lint": "npm run lint:js",
-    "lint:js": "front-linter js"
+    "lint:js": "front-linter js",
+    "lint:sass": "front-linter sass"
   },
   "devDependencies": {
-    "front-linter": "1.0.0"
+    "@rogal/front-linter": "1.0.0"
   },
   "eslintConfig": { "extends": ["./node_modules/@rogal/front-linter/eslintrc.js"] },
   "stylelint": {

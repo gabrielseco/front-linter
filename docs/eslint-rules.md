@@ -166,14 +166,14 @@ These are the rules resulting of current configuration in `eslintrc.js`
     "prettier/prettier": [
       2,
       {
-        "printWidth": 99,
+        "printWidth": 80,
         "tabWidth": 2,
-        "singleQuote": false,
+        "singleQuote": true,
         "trailingComma": "none",
-        "bracketSpacing": false,
-        "semi": false,
+        "bracketSpacing": true,
+        "semi": true,
         "useTabs": false,
-        "parser": "babylon",
+        "parser": "babel",
         "jsxBracketSameLine": false,
         "arrowParens": "avoid"
       }
@@ -190,7 +190,8 @@ These are the rules resulting of current configuration in `eslintrc.js`
   ],
   "extends": [
     "plugin:react/recommended",
-    "prettier"
+    "prettier",
+    "./eslintrc.js"
   ],
   "parser": "/Users/usuario/front-linter/node_modules/babel-eslint/lib/index.js"
 }
