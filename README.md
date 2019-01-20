@@ -13,7 +13,7 @@ This package is a fork of [SUI](https://github.com/SUI-Components/sui/blob/maste
 ## Installation
 
 ```sh
-$ npm install @dry/front-linter --save-dev
+$ npm install @rogal/front-linter --save-dev
 ```
 
 ## CLI
@@ -57,7 +57,7 @@ $ front-linter js --fix --staged
 
 Same command but applied only on staged files (obtained with `git diff --cached --name-only --diff-filter=d` command).
 
-For integrations, prettier config is located in `@dry/front-linter/lint/.prettierrc.js`.
+For integrations, prettier config is located in `@rogal/front-linter/lint/.prettierrc.js`.
 
 ### Add fixes to the stage
 
@@ -82,11 +82,11 @@ Steps to integrate front-linter with an IDE:
 ```json
 {
   "eslintConfig": {
-    "extends": ["./node_modules/@dry/front-linter/eslintrc.js"]
+    "extends": ["./node_modules/@rogal/front-linter/eslintrc.js"]
   },
   "stylelint": {
     "extends": [
-      "./node_modules/@dry/front-linter/.stylelintrc.json"
+      "./node_modules/@rogal/front-linter/.stylelintrc.json"
     ]
   }
 }
@@ -105,10 +105,10 @@ Steps to integrate front-linter with an IDE:
   "devDependencies": {
     "front-linter": "1.0.0"
   },
-  "eslintConfig": { "extends": ["./node_modules/@dry/front-linter/eslintrc.js"] },
+  "eslintConfig": { "extends": ["./node_modules/@rogal/front-linter/eslintrc.js"] },
   "stylelint": {
     "extends": [
-      "./node_modules/@dry/front-linter/.stylelintrc.json"
+      "./node_modules/@rogal/front-linter/.stylelintrc.json"
     ]
   }
 }
