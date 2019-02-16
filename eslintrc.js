@@ -9,7 +9,7 @@ const RULES = {
 module.exports = {
   extends: ['plugin:react/recommended', 'prettier'],
   parser: 'babel-eslint',
-  plugins: ['prettier'],
+  plugins: ['prettier', 'react-hooks'],
   rules: {
     'no-unused-vars': [
       RULES.ERROR,
@@ -57,6 +57,7 @@ module.exports = {
         }
       }
     ],
+    'react-hooks/rules-of-hooks': RULES.ERROR,
     'prettier/prettier': [RULES.ERROR, prettierOptions]
   }
 };

@@ -10,6 +10,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 ### Removed
 
+## [1.0.0-beta.2] - 2019-02-16
+### Added
+
+- Added eslint react-hooks
+
 ## [1.0.0-beta.1] - 2019-01-20
 ### Fixed
 
