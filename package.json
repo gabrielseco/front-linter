@@ -1,6 +1,6 @@
 {
   "name": "@rogal/front-linter",
-  "version": "1.0.0-beta.2",
+  "version": "1.0.0-beta.3",
   "description": "Linting CLI for Frontend Projects",
   "main": "./bin/front-linter.js",
   "bin": {
@@ -27,6 +27,7 @@
     "eslint-plugin-react": "^7.11.1",
     "eslint-plugin-react-hooks": "^1.0.2",
     "figures": "^2.0.0",
+    "pluggable-babel-eslint": "^0.3.0",
     "prettier": "1.16.4",
     "simple-git": "1.92.0",
     "stylelint": "^9.5.0",

@@ -9,6 +9,7 @@ program.version(version, '    --version');
 
 program
   .command('js', 'lint javascript files')
+  .command('ts', 'lint typescript files')
   .command('sass', 'lint sass files');
 
 program.parse(process.argv);
