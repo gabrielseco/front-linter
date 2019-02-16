@@ -1,12 +1,16 @@
 const {
-  COMMON_RULES,
+  GET_ESLINT_RULES,
   EXTENDS_ESLINT,
   PLUGINS_ESLINT
 } = require('./eslintrc-common');
 
-module.exports = {
+const CONFIG = {
   extends: EXTENDS_ESLINT,
   parser: 'babel-eslint',
   plugins: PLUGINS_ESLINT,
-  rules: COMMON_RULES
+  rules: GET_ESLINT_RULES({
+    typescript: false
+  })
 };
+
+module.exports = CONFIG;

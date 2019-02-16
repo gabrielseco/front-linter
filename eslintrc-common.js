@@ -57,11 +57,23 @@ const COMMON_RULES = {
   'prettier/prettier': [RULES.ERROR, prettierOptions]
 };
 
+const GET_PRETTIER_OPTIONS = typescript => ({
+  ...prettierOptions,
+  parser: typescript ? 'typescript' : 'babel'
+});
+
+const GET_ESLINT_RULES = ({ typescript = false }) => {
+  return {
+    ...COMMON_RULES,
+    'prettier/prettier': [RULES.ERROR, GET_PRETTIER_OPTIONS(typescript)]
+  };
+};
+
 const EXTENDS_ESLINT = ['plugin:react/recommended', 'prettier'];
 const PLUGINS_ESLINT = ['prettier', 'react-hooks'];
 
 module.exports = {
-  COMMON_RULES,
+  GET_ESLINT_RULES,
   EXTENDS_ESLINT,
   PLUGINS_ESLINT
 };

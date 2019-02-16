@@ -1,6 +1,6 @@
 {
   "name": "@rogal/front-linter",
-  "version": "1.0.0-beta.3",
+  "version": "1.0.0-beta.4",
   "description": "Linting CLI for Frontend Projects",
   "main": "./bin/front-linter.js",
   "bin": {
@@ -11,7 +11,8 @@
     "precommit": "lint-staged",
     "lint-stage": "./node_modules/.bin/eslint --config=./eslintrc.js --ignore-pattern !.prettierrc.js",
     "lint": "./node_modules/.bin/eslint --config=./eslintrc.js bin src eslintrc.js .prettierrc.js --ignore-pattern !.prettierrc.js",
-    "eslint:print-rules": "./node_modules/.bin/eslint --config=./eslintrc.js --print-config .",
+    "eslint:print-rules-js": "./node_modules/.bin/eslint --config=./eslintrc.js --print-config .",
+    "eslint:print-rules-ts": "./node_modules/.bin/eslint --config=./eslintrc-ts.js --print-config .",
     "eslint:prettier-check": "./node_modules/.bin/eslint --config=./eslintrc.js --print-config . | ./node_modules/.bin/eslint-config-prettier-check"
   },
   "keywords": [],
@@ -44,10 +45,5 @@
   "devDependencies": {
     "husky": "0.14.3",
     "lint-staged": "^7.2.2"
-  },
-  "eslintConfig": {
-    "extends": [
-      "./eslintrc.js"
-    ]
   }
 }
