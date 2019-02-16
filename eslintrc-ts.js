@@ -6,7 +6,7 @@ const {
 
 module.exports = {
   extends: EXTENDS_ESLINT,
-  parser: 'babel-eslint',
+  parser: 'pluggable-babel-eslint',
   plugins: PLUGINS_ESLINT,
   rules: COMMON_RULES
 };
