@@ -10,6 +10,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 ### Removed
 
+## [1.0.0-beta.4] - 2019-02-16
+### Added
+
+- Fix linting for typescript
+
 ## [1.0.0-beta.3] - 2019-02-16
 ### Added
 
