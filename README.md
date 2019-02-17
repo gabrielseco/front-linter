@@ -1,10 +1,10 @@
-# front-linter
+# front-linter [![NPM Version](https://img.shields.io/npm/v/@rogal/front-linter.svg)](https://www.npmjs.com/package/@rogal/front-linter) [![NPM Downloads](https://img.shields.io/npm/dm/@rogal/front-linter.svg)](https://www.npmjs.com/package/@rogal/front-linter)
 
 > CLI to lint your code and make it compliant.
 
 It provides:
 
-* Same js and sass style of code across for all my repos.
+* Same js, ts and sass style of code across for all my repos.
 * Linting rules a reference package, not duplicated linting config in every project.
 * Implemented as a reusable CLI.
 
@@ -37,6 +37,23 @@ Same options available in [eslint](https://eslint.org/docs/user-guide/command-li
 ```sh
 $ front-linter js --fix [options]
 ```
+
+
+### Lint Typescript files 
+```sh
+$ front-linter ts [options]
+```
+
+It lints all `ts|tsx|js|jsx` files in your project, excluding `.eslintignore` and `.gitignore` file patterns.
+
+Same options available in [eslint](https://eslint.org/docs/user-guide/command-line-interface) except one: `-c, --config`. If you try to use this option, an exception will be thrown.
+
+### Format TS files
+
+```sh
+$ front-linter ts --fix [options]
+```
+
 
 ### Lint SASS files
 
@@ -72,7 +89,7 @@ In fix mode like with `front-linter js --fix`, the `--add-fixes` option will sta
 
 It's usefull to make your code autoformat before any commit.
 
-## IDE integration
+## IDE JS & SASS integration
 
 Steps to integrate front-linter with an IDE:
 
@@ -92,7 +109,27 @@ Steps to integrate front-linter with an IDE:
 }
 ```
 
-### Example package.json
+## IDE TS & SASS integration
+
+Steps to integrate front-linter with an IDE:
+
+1.  Install (if needed) eslint/stylelint plugin in your IDE.
+2.  Add these lines to `package.json`:
+
+```json
+{
+  "eslintConfig": {
+    "extends": ["./node_modules/@rogal/front-linter/eslintrc-ts.js"]
+  },
+  "stylelint": {
+    "extends": [
+      "./node_modules/@rogal/front-linter/.stylelintrc.json"
+    ]
+  }
+}
+```
+
+### Example JS & SASS package.json
 
 ```json
 {
@@ -106,6 +143,28 @@ Steps to integrate front-linter with an IDE:
     "@rogal/front-linter": "1.0.0"
   },
   "eslintConfig": { "extends": ["./node_modules/@rogal/front-linter/eslintrc.js"] },
+  "stylelint": {
+    "extends": [
+      "./node_modules/@rogal/front-linter/.stylelintrc.json"
+    ]
+  }
+}
+```
+
+### Example TS & SASS package.json
+
+```json
+{
+  "name": "test-project",
+  "version": "1.0.0",
+  "scripts": {
+    "lint:ts": "front-linter ts",
+    "lint:sass": "front-linter sass"
+  },
+  "devDependencies": {
+    "@rogal/front-linter": "1.0.0"
+  },
+  "eslintConfig": { "extends": ["./node_modules/@rogal/front-linter/eslintrc-ts.js"] },
   "stylelint": {
     "extends": [
       "./node_modules/@rogal/front-linter/.stylelintrc.json"

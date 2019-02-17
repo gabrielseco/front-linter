@@ -2,7 +2,7 @@
 
 ## Rules used by eslint
 
-These are the rules resulting of current configuration in `eslintrc.js`
+These are the rules resulting of current configuration in `eslintrc-ts.js`
 
 ```json
 {
@@ -174,7 +174,7 @@ These are the rules resulting of current configuration in `eslintrc.js`
         "bracketSpacing": true,
         "semi": true,
         "useTabs": false,
-        "parser": "babel",
+        "parser": "typescript",
         "jsxBracketSameLine": false,
         "arrowParens": "avoid"
       }
@@ -183,7 +183,12 @@ These are the rules resulting of current configuration in `eslintrc.js`
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
-    }
+    },
+    "plugins": [
+      "typescript"
+    ],
+    "ecmaVersion": 2018,
+    "sourceType": "module"
   },
   "plugins": [
     "react",
@@ -194,27 +199,6 @@ These are the rules resulting of current configuration in `eslintrc.js`
     "plugin:react/recommended",
     "prettier"
   ],
-  "parser": "/Users/usuario/front-linter/node_modules/babel-eslint/lib/index.js"
+  "parser": "/Users/usuario/front-linter/node_modules/pluggable-babel-eslint/lib/index.js"
 }
 ```
-
----
-
-This output was obtained executing:
-
-```sh
-$ npm run eslint:print-rules
-```
-
-## Rules conflicting with prettier
-
-No rules that are unnecessary or conflict with Prettier were found.
-
----
-
-This output was obtained executing:
-
-```sh
-$ npm run eslint:prettier-check
-```
-
