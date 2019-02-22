@@ -54,6 +54,7 @@ const COMMON_RULES = {
     }
   ],
   'react-hooks/rules-of-hooks': RULES.ERROR,
+  'react-hooks/exhaustive-deps': RULES.ERROR,
   'prettier/prettier': [RULES.ERROR, prettierOptions]
 };
 
