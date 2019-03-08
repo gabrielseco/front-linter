@@ -10,6 +10,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 ### Removed
 
+## [1.3.0] - 2019-03-08
+### Changed
+- Update eslint-react-hooks to be in sync with react team
+
 ## [1.2.0] - 2019-03-02
 ### Changed
 - Update eslint-react-hooks to be in sync with react team
