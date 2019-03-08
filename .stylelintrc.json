@@ -13,6 +13,7 @@
     "comment-whitespace-inside": "always",
     "declaration-no-important": true,
     "declaration-block-no-duplicate-properties": true,
+    "no-extra-semicolons": true,
     "no-missing-end-of-source-newline": null,
     "rule-empty-line-before": "always",
     "max-nesting-depth": 5,

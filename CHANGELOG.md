@@ -11,6 +11,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 
 ## [1.3.0] - 2019-03-08
+### Added
+- Added rule for stylelint no-extra-semicolons
 ### Changed
 - Update eslint-react-hooks to be in sync with react team
 
