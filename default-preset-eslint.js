@@ -11,6 +11,9 @@ module.exports = {
         ignoreRestSiblings: false
       }
     ],
+    'no-var': 2,
+    'no-console': 1,
+    'no-debugger': 2,
     'prettier/prettier': [
       2,
       {

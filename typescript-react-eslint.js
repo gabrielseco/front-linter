@@ -1,7 +1,11 @@
 module.exports = {
-  extends: ['prettier', 'plugin:react/recommended'],
+  extends: [
+    'prettier',
+    'plugin:react/recommended',
+    'plugin:jsx-a11y/recommended'
+  ],
   parser: 'pluggable-babel-eslint',
-  plugins: ['prettier', 'react-hooks'],
+  plugins: ['prettier', 'react-hooks', 'jsx-a11y'],
   rules: {
     'no-unused-vars': [
       2,
@@ -11,13 +15,22 @@ module.exports = {
         ignoreRestSiblings: false
       }
     ],
-    'react/no-unused-prop-types': 2,
-    'react/sort-prop-types': 2,
-    'react/prop-types': 2,
-    'react/no-deprecated': 2,
+    'no-var': 2,
+    'no-console': 1,
+    'no-debugger': 2,
+    'react/jsx-no-duplicate-props': [
+      1,
+      {
+        ignoreCase: true
+      }
+    ],
     'react/no-access-state-in-setstate': 2,
+    'react/no-deprecated': 2,
     'react/no-did-mount-set-state': 2,
     'react/no-typos': 2,
+    'react/no-unused-prop-types': 2,
+    'react/prop-types': 2,
+    'react/sort-prop-types': 2,
     'react/sort-comp': [
       2,
       {
@@ -54,7 +67,7 @@ module.exports = {
       }
     ],
     'react-hooks/rules-of-hooks': 2,
-    'react-hooks/exhaustive-deps': 2,
+    'react-hooks/exhaustive-deps': 1,
     'prettier/prettier': [
       2,
       {

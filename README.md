@@ -41,7 +41,7 @@ $ front-linter js --fix [options]
 
 ### Lint Typescript files 
 ```sh
-$ front-linter ts [options]
+$ front-linter js --presets=typescript [options]
 ```
 
 It lints all `ts|tsx|js|jsx` files in your project, excluding `.eslintignore` and `.gitignore` file patterns.
@@ -51,7 +51,7 @@ Same options available in [eslint](https://eslint.org/docs/user-guide/command-li
 ### Format TS files
 
 ```sh
-$ front-linter ts --fix [options]
+$ front-linter  --presets=typescript --fix [options]
 ```
 
 
@@ -64,6 +64,24 @@ $ front-linter sass [options]
 Lints all `**/src/**/*.scss` files in the project, excluding `node_modules`, `lib`, `dist`, `public`.
 
 > **`.gitignore` file patterns are also excluded but interpretation may differ as only glob patterns are understood**
+
+
+### Presets
+
+Now we have three presets.
+
+You have the preset javascript, typescript and react
+
+You can combine react with javascript or typescript with react
+
+```sh
+$ front-linter js --presets=javascript,react
+```
+
+```sh
+$ front-linter js --presets=typescript,react
+```
+
 
 ### Scope commands to staged files
 
@@ -142,7 +160,7 @@ Steps to integrate front-linter with an IDE:
   "devDependencies": {
     "@rogal/front-linter": "1.0.0"
   },
-  "eslintConfig": { "extends": ["./node_modules/@rogal/front-linter/eslintrc.js"] },
+  "eslintConfig": { "extends": ["./node_modules/@rogal/front-linter/default-preset-eslint.js"] },
   "stylelint": {
     "extends": [
       "./node_modules/@rogal/front-linter/.stylelintrc.json"
@@ -158,13 +176,13 @@ Steps to integrate front-linter with an IDE:
   "name": "test-project",
   "version": "1.0.0",
   "scripts": {
-    "lint:ts": "front-linter ts",
+    "lint:ts": "front-linter js --presets=typescript",
     "lint:sass": "front-linter sass"
   },
   "devDependencies": {
     "@rogal/front-linter": "1.0.0"
   },
-  "eslintConfig": { "extends": ["./node_modules/@rogal/front-linter/eslintrc-ts.js"] },
+  "eslintConfig": { "extends": ["./node_modules/@rogal/front-linter/typescript-react-eslint.js"] },
   "stylelint": {
     "extends": [
       "./node_modules/@rogal/front-linter/.stylelintrc.json"
