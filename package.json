@@ -1,6 +1,6 @@
 {
   "name": "@rogal/front-linter",
-  "version": "2.0.0-beta.0",
+  "version": "2.0.0-beta.1",
   "description": "Linting CLI for Frontend Projects",
   "main": "./bin/front-linter.js",
   "bin": {
@@ -43,7 +43,10 @@
   "lint-staged": {
     "src/**/*.js": "npm run lint-stage",
     "bin/**/*.js": "npm run lint-stage",
-    "default-preset-eslint.js": ["npm run lint-stage", "git add"],
+    "default-preset-eslint.js": [
+      "npm run lint-stage",
+      "git add"
+    ],
     "javascript-react-eslint.js": [
       "npm run lint-stage",
       "git add"

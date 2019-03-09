@@ -77,7 +77,7 @@ const GET_ESLINT_RULES = ({ javascript, typescript, react }) => {
 
 const GET_EXTENDS_ESLINT = ({ javascript, typescript, react }) => {
   const commonExtends = javascript || typescript ? ['prettier'] : [];
-  const reactExtends = react ? ['react'] : [];
+  const reactExtends = react ? ['plugin:react/recommended'] : [];
 
   return [...commonExtends, ...reactExtends];
 };

@@ -1,5 +1,5 @@
 module.exports = {
-  extends: ['prettier', 'react'],
+  extends: ['prettier', 'plugin:react/recommended'],
   parser: 'pluggable-babel-eslint',
   plugins: ['prettier', 'react-hooks'],
   rules: {

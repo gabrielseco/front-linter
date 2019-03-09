@@ -10,6 +10,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 ### Removed
 
+## [2.0.0-beta.1] - 2019-03-09
+### Fixed
+- Fixed error in extends
+
 ## [2.0.0-beta.0] - 2019-03-09
 ### Added
 - Added presets
