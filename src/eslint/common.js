@@ -10,17 +10,21 @@ const COMMON_RULES = {
   'no-unused-vars': [
     RULES.ERROR,
     { vars: 'all', args: 'after-used', ignoreRestSiblings: false }
-  ]
+  ],
+  'no-var': RULES.ERROR,
+  'no-console': RULES.WARNING,
+  'no-debugger': RULES.ERROR
 };
 
 const REACT_RULES = {
-  'react/no-unused-prop-types': RULES.ERROR,
-  'react/sort-prop-types': RULES.ERROR,
-  'react/prop-types': RULES.ERROR,
-  'react/no-deprecated': RULES.ERROR,
+  'react/jsx-no-duplicate-props': [RULES.WARNING, { ignoreCase: true }],
   'react/no-access-state-in-setstate': RULES.ERROR,
+  'react/no-deprecated': RULES.ERROR,
   'react/no-did-mount-set-state': RULES.ERROR,
   'react/no-typos': RULES.ERROR,
+  'react/no-unused-prop-types': RULES.ERROR,
+  'react/prop-types': RULES.ERROR,
+  'react/sort-prop-types': RULES.ERROR,
   'react/sort-comp': [
     RULES.ERROR,
     {
@@ -57,7 +61,7 @@ const REACT_RULES = {
     }
   ],
   'react-hooks/rules-of-hooks': RULES.ERROR,
-  'react-hooks/exhaustive-deps': RULES.ERROR
+  'react-hooks/exhaustive-deps': RULES.WARNING
 };
 
 const GET_PRETTIER_OPTIONS = typescript => ({
@@ -77,14 +81,16 @@ const GET_ESLINT_RULES = ({ javascript, typescript, react }) => {
 
 const GET_EXTENDS_ESLINT = ({ javascript, typescript, react }) => {
   const commonExtends = javascript || typescript ? ['prettier'] : [];
-  const reactExtends = react ? ['plugin:react/recommended'] : [];
+  const reactExtends = react
+    ? ['plugin:react/recommended', 'plugin:jsx-a11y/recommended']
+    : [];
 
   return [...commonExtends, ...reactExtends];
 };
 
 const GET_PLUGINS_ESLINT = ({ javascript, typescript, react }) => {
   const commonPlugins = javascript || typescript ? ['prettier'] : [];
-  const reactPlugins = react ? ['react-hooks'] : [];
+  const reactPlugins = react ? ['react-hooks', 'jsx-a11y'] : [];
 
   return [...commonPlugins, ...reactPlugins];
 };
