@@ -4,10 +4,12 @@ const {
   GET_PLUGINS_ESLINT
 } = require('./common');
 
+const { PRESET_TYPES } = require('./../presets');
+
 const AVAILABLE_PRESETS_OPTIONS = presets => ({
-  javascript: presets.includes('javascript'),
-  react: presets.includes('react'),
-  typescript: presets.includes('typescript')
+  javascript: presets.includes(PRESET_TYPES.JAVASCRIPT),
+  react: presets.includes(PRESET_TYPES.REACT),
+  typescript: presets.includes(PRESET_TYPES.TYPESCRIPT)
 });
 
 const CONFIG = presets => {
@@ -27,7 +29,7 @@ const CONFIG = presets => {
     }
   };
 
-  const addTypescriptConfig = presets.includes('typescript')
+  const addTypescriptConfig = presets.includes(PRESET_TYPES.TYPESCRIPT)
     ? typescriptConfig
     : undefined;
 
