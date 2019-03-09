@@ -12,7 +12,8 @@
     "lint-stage": "./node_modules/.bin/eslint --config=./default-preset-eslint.js --ignore-pattern !.prettierrc.js",
     "lint": "./node_modules/.bin/eslint --config=./default-preset-eslint.js bin src default-preset-eslint.js .prettierrc.js --ignore-pattern !.prettierrc.js",
     "eslint:print-rules-js": "./node_modules/.bin/eslint --config=./default-preset-eslint.js --print-config .",
-    "eslint:print-rules-ts": "./node_modules/.bin/eslint --config=./typescript-react-eslint.js --print-config .",
+    "eslint:print-rules-js-react": "./node_modules/.bin/eslint --config=./javascript-react-eslint.js --print-config .",
+    "eslint:print-rules-ts-react": "./node_modules/.bin/eslint --config=./typescript-react-eslint.js --print-config .",
     "eslint:prettier-check": "./node_modules/.bin/eslint --config=./default-preset-eslint.js --print-config . | ./node_modules/.bin/eslint-config-prettier-check"
   },
   "keywords": [],

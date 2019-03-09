@@ -41,7 +41,7 @@ $ front-linter js --fix [options]
 
 ### Lint Typescript files 
 ```sh
-$ front-linter js --presets=typescript [options]
+$ front-linter js -- --presets=typescript [options]
 ```
 
 It lints all `ts|tsx|js|jsx` files in your project, excluding `.eslintignore` and `.gitignore` file patterns.
@@ -51,7 +51,7 @@ Same options available in [eslint](https://eslint.org/docs/user-guide/command-li
 ### Format TS files
 
 ```sh
-$ front-linter  --presets=typescript --fix [options]
+$ front-linter  -- --presets=typescript --fix [options]
 ```
 
 
@@ -75,11 +75,11 @@ You have the preset javascript, typescript and react
 You can combine react with javascript or typescript with react
 
 ```sh
-$ front-linter js --presets=javascript,react
+$ front-linter js -- --presets=javascript,react
 ```
 
 ```sh
-$ front-linter js --presets=typescript,react
+$ front-linter js -- --presets=typescript,react
 ```
 
 
@@ -117,7 +117,7 @@ Steps to integrate front-linter with an IDE:
 ```json
 {
   "eslintConfig": {
-    "extends": ["./node_modules/@rogal/front-linter/eslintrc.js"]
+    "extends": ["./node_modules/@rogal/front-linter/javascript-react-eslint.js"]
   },
   "stylelint": {
     "extends": [
@@ -137,7 +137,7 @@ Steps to integrate front-linter with an IDE:
 ```json
 {
   "eslintConfig": {
-    "extends": ["./node_modules/@rogal/front-linter/eslintrc-ts.js"]
+    "extends": ["./node_modules/@rogal/front-linter/typescript-react-eslint.js"]
   },
   "stylelint": {
     "extends": [
@@ -176,7 +176,7 @@ Steps to integrate front-linter with an IDE:
   "name": "test-project",
   "version": "1.0.0",
   "scripts": {
-    "lint:ts": "front-linter js --presets=typescript",
+    "lint:ts": "front-linter js -- --presets=typescript",
     "lint:sass": "front-linter sass"
   },
   "devDependencies": {
