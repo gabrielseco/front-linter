@@ -58,7 +58,7 @@ const getEslintFilePreset = presets => {
     presets.includes(PRESET_TYPES.REACT) &&
     !presets.includes(PRESET_TYPES.JAVASCRIPT)
   ) {
-    return FILES.reactTypescript;
+    return ESLINT_FILES.reactTypescript;
   }
 };
 
