@@ -1,6 +1,6 @@
 {
   "name": "@rogal/front-linter",
-  "version": "1.3.0",
+  "version": "2.0.0-beta.0",
   "description": "Linting CLI for Frontend Projects",
   "main": "./bin/front-linter.js",
   "bin": {
@@ -8,11 +8,12 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint-stage": "./node_modules/.bin/eslint --config=./eslintrc.js --ignore-pattern !.prettierrc.js",
-    "lint": "./node_modules/.bin/eslint --config=./eslintrc.js bin src eslintrc.js .prettierrc.js --ignore-pattern !.prettierrc.js",
-    "eslint:print-rules-js": "./node_modules/.bin/eslint --config=./eslintrc.js --print-config .",
-    "eslint:print-rules-ts": "./node_modules/.bin/eslint --config=./eslintrc-ts.js --print-config .",
-    "eslint:prettier-check": "./node_modules/.bin/eslint --config=./eslintrc.js --print-config . | ./node_modules/.bin/eslint-config-prettier-check"
+    "build-lint-files": "node scripts/createEslintFiles",
+    "lint-stage": "./node_modules/.bin/eslint --config=./default-preset-eslint.js --ignore-pattern !.prettierrc.js",
+    "lint": "./node_modules/.bin/eslint --config=./default-preset-eslint.js bin src default-preset-eslint .prettierrc.js --ignore-pattern !.prettierrc.js",
+    "eslint:print-rules-js": "./node_modules/.bin/eslint --config=./default-preset-eslint.js --print-config .",
+    "eslint:print-rules-ts": "./node_modules/.bin/eslint --config=./typescript-react-eslint.js --print-config .",
+    "eslint:prettier-check": "./node_modules/.bin/eslint --config=./default-preset-eslint.js --print-config . | ./node_modules/.bin/eslint-config-prettier-check"
   },
   "keywords": [],
   "author": "",
@@ -42,12 +43,20 @@
   "lint-staged": {
     "src/**/*.js": "npm run lint-stage",
     "bin/**/*.js": "npm run lint-stage",
-    "eslintrc.js": "npm run lint-stage",
+    "default-preset-eslint.js": ["npm run lint-stage", "git add"],
+    "javascript-react-eslint.js": [
+      "npm run lint-stage",
+      "git add"
+    ],
+    "typescript-react-eslint.js": [
+      "npm run lint-stage",
+      "git add"
+    ],
     ".prettierrc.js": "npm run lint-stage"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "npm run build-lint-files && lint-staged"
     }
   }
 }
