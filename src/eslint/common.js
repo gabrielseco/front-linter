@@ -1,4 +1,4 @@
-const prettierOptions = require('./.prettierrc.js');
+const prettierOptions = require('./../../.prettierrc.js');
 
 const RULES = {
   OFF: 0,
@@ -10,7 +10,10 @@ const COMMON_RULES = {
   'no-unused-vars': [
     RULES.ERROR,
     { vars: 'all', args: 'after-used', ignoreRestSiblings: false }
-  ],
+  ]
+};
+
+const REACT_RULES = {
   'react/no-unused-prop-types': RULES.ERROR,
   'react/sort-prop-types': RULES.ERROR,
   'react/prop-types': RULES.ERROR,
@@ -54,8 +57,7 @@ const COMMON_RULES = {
     }
   ],
   'react-hooks/rules-of-hooks': RULES.ERROR,
-  'react-hooks/exhaustive-deps': RULES.ERROR,
-  'prettier/prettier': [RULES.ERROR, prettierOptions]
+  'react-hooks/exhaustive-deps': RULES.ERROR
 };
 
 const GET_PRETTIER_OPTIONS = typescript => ({
@@ -63,18 +65,32 @@ const GET_PRETTIER_OPTIONS = typescript => ({
   parser: typescript ? 'typescript' : 'babel'
 });
 
-const GET_ESLINT_RULES = ({ typescript = false }) => {
+const GET_ESLINT_RULES = ({ javascript, typescript, react }) => {
+  const commonRules = javascript || typescript ? COMMON_RULES : undefined;
+  const reactRules = react ? REACT_RULES : undefined;
   return {
-    ...COMMON_RULES,
+    ...commonRules,
+    ...reactRules,
     'prettier/prettier': [RULES.ERROR, GET_PRETTIER_OPTIONS(typescript)]
   };
 };
 
-const EXTENDS_ESLINT = ['plugin:react/recommended', 'prettier'];
-const PLUGINS_ESLINT = ['prettier', 'react-hooks'];
+const GET_EXTENDS_ESLINT = ({ javascript, typescript, react }) => {
+  const commonExtends = javascript || typescript ? ['prettier'] : [];
+  const reactExtends = react ? ['react'] : [];
+
+  return [...commonExtends, ...reactExtends];
+};
+
+const GET_PLUGINS_ESLINT = ({ javascript, typescript, react }) => {
+  const commonPlugins = javascript || typescript ? ['prettier'] : [];
+  const reactPlugins = react ? ['react-hooks'] : [];
+
+  return [...commonPlugins, ...reactPlugins];
+};
 
 module.exports = {
   GET_ESLINT_RULES,
-  EXTENDS_ESLINT,
-  PLUGINS_ESLINT
+  GET_EXTENDS_ESLINT,
+  GET_PLUGINS_ESLINT
 };

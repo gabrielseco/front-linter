@@ -31,7 +31,12 @@ function executeLintingCommand(binPath, args) {
     );
     process.exit(1);
   }
-  return getSpawnPromise(binPath, args.concat(processArgs)).catch(showError);
+
+  const argumentsToLint = args
+    .concat(processArgs)
+    .filter(arg => !arg.includes('--presets'));
+
+  return getSpawnPromise(binPath, argumentsToLint).catch(showError);
 }
 
 /**
