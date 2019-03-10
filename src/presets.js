@@ -21,7 +21,13 @@ const getPresetsFromCommandLine = () => {
     return;
   }
 
-  return presetsArgument.split('=')[1].split(',');
+  if (presetsArgument.indexOf('=') !== -1) {
+    return presetsArgument.split('=')[1].split(',');
+  }
+
+  throw new Error(
+    'Pass me the presets arguments like front-linter js -- --presets=javascript'
+  );
 };
 
 /**
