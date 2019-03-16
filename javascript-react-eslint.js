@@ -18,6 +18,7 @@ module.exports = {
     'no-var': 2,
     'no-console': 1,
     'no-debugger': 2,
+    'react/jsx-no-undef': 2,
     'react/jsx-no-duplicate-props': [
       1,
       {
