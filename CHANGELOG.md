@@ -10,6 +10,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 ### Removed
 
+## [2.0.1] - 2019-04-08
+### Fixed
+- Remove stylelint rules
+
 ## [2.0.0] - 2019-04-08
 ### Added
 - Documentation

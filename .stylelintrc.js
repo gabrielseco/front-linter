@@ -30,16 +30,6 @@ module.exports = {
         }
       ]
     ],
-    'sh-waqar/declaration-use-variable': [
-      [
-        'font-size',
-        '/padding/',
-        '/margin/',
-        {
-          ignoreValues: ['0', 'inherit']
-        }
-      ]
-    ],
     'scss/at-extend-no-missing-placeholder': null,
     'scss/at-import-no-partial-leading-underscore': null,
     'scss/at-mixin-pattern': null,
