@@ -1,6 +1,6 @@
 {
   "name": "@rogal/front-linter",
-  "version": "2.0.0-beta.3",
+  "version": "2.0.0",
   "description": "Linting CLI for Frontend Projects",
   "main": "./bin/front-linter.js",
   "bin": {
@@ -12,7 +12,8 @@
     "lint-stage": "./node_modules/.bin/eslint --config=./default-preset-eslint.js --ignore-pattern !.prettierrc.js",
     "lint": "./node_modules/.bin/eslint --config=./default-preset-eslint.js bin src default-preset-eslint.js .prettierrc.js --ignore-pattern !.prettierrc.js",
     "eslint:print-rules-js": "./node_modules/.bin/eslint --config=./default-preset-eslint.js --print-config .",
-    "eslint:print-rules-ts": "./node_modules/.bin/eslint --config=./typescript-react-eslint.js --print-config .",
+    "eslint:print-rules-js-react": "./node_modules/.bin/eslint --config=./javascript-react-eslint.js --print-config .",
+    "eslint:print-rules-ts-react": "./node_modules/.bin/eslint --config=./typescript-react-eslint.js --print-config .",
     "eslint:prettier-check": "./node_modules/.bin/eslint --config=./default-preset-eslint.js --print-config . | ./node_modules/.bin/eslint-config-prettier-check"
   },
   "keywords": [],
@@ -24,18 +25,18 @@
     "commander": "2.15.1",
     "eslint": "5.0.0",
     "eslint-plugin-jsx-a11y": "^6.2.1",
-    "eslint-config-prettier": "^3.3.0",
-    "eslint-plugin-prettier": "^3.0.0",
-    "eslint-plugin-react": "^7.11.1",
-    "eslint-plugin-react-hooks": "^1.5.0",    
+    "eslint-config-prettier": "^4.1.0",
+    "eslint-plugin-prettier": "^3.0.1",
+    "eslint-plugin-react": "^7.12.4",
+    "eslint-plugin-react-hooks": "^1.6.0",
     "figures": "^2.0.0",
     "pluggable-babel-eslint": "^0.3.0",
     "prettier": "1.16.4",
     "simple-git": "1.92.0",
-    "stylelint": "^9.5.0",
-    "stylelint-config-sass-guidelines": "^5.2.0",
+    "stylelint": "^9.10.1",
+    "stylelint-config-sass-guidelines": "^5.3.0",
     "stylelint-declaration-use-variable": "^1.7.0",
-    "stylelint-scss": "^3.3.0"
+    "stylelint-scss": "^3.5.4"
   },
   "devDependencies": {
     "husky": "1.3.1",

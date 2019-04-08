@@ -17,6 +17,7 @@ const COMMON_RULES = {
 };
 
 const REACT_RULES = {
+  'react/jsx-no-undef': RULES.ERROR,
   'react/jsx-no-duplicate-props': [RULES.WARNING, { ignoreCase: true }],
   'react/no-access-state-in-setstate': RULES.ERROR,
   'react/no-deprecated': RULES.ERROR,

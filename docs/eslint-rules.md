@@ -2,35 +2,13 @@
 
 ## Rules used by eslint
 
-These are the rules resulting of current configuration in `eslintrc.js`
+These are the rules resulting of current configuration in `default-preset-eslint.js`
 
 ```json
 {
   "globals": {},
   "env": {},
   "rules": {
-    "react/display-name": 2,
-    "react/jsx-key": 2,
-    "react/jsx-no-comment-textnodes": 2,
-    "react/jsx-no-duplicate-props": 2,
-    "react/jsx-no-target-blank": 2,
-    "react/jsx-no-undef": 2,
-    "react/jsx-uses-react": 2,
-    "react/jsx-uses-vars": 2,
-    "react/no-children-prop": 2,
-    "react/no-danger-with-children": 2,
-    "react/no-deprecated": 2,
-    "react/no-direct-mutation-state": 2,
-    "react/no-find-dom-node": 2,
-    "react/no-is-mounted": 2,
-    "react/no-render-return-value": 2,
-    "react/no-string-refs": 2,
-    "react/no-unescaped-entities": 2,
-    "react/no-unknown-property": 2,
-    "react/no-unsafe": 0,
-    "react/prop-types": 2,
-    "react/react-in-jsx-scope": 2,
-    "react/require-render-return": 2,
     "curly": 0,
     "lines-around-comment": 0,
     "max-len": 0,
@@ -118,52 +96,9 @@ These are the rules resulting of current configuration in `eslintrc.js`
         "ignoreRestSiblings": false
       }
     ],
-    "react/no-unused-prop-types": 2,
-    "react/sort-prop-types": 2,
-    "react/no-access-state-in-setstate": 2,
-    "react/no-did-mount-set-state": 2,
-    "react/no-typos": 2,
-    "react/sort-comp": [
-      2,
-      {
-        "order": [
-          "static-methods",
-          "lifecycle",
-          "everything-else",
-          "render"
-        ],
-        "groups": {
-          "lifecycle": [
-            "displayName",
-            "propTypes",
-            "contextTypes",
-            "childContextTypes",
-            "mixins",
-            "statics",
-            "defaultProps",
-            "constructor",
-            "getDefaultProps",
-            "state",
-            "getInitialState",
-            "getChildContext",
-            "getDerivedStateFromProps",
-            "componentWillMount",
-            "UNSAFE_componentWillMount",
-            "componentDidMount",
-            "componentWillReceiveProps",
-            "UNSAFE_componentWillReceiveProps",
-            "shouldComponentUpdate",
-            "componentWillUpdate",
-            "UNSAFE_componentWillUpdate",
-            "getSnapshotBeforeUpdate",
-            "componentDidUpdate",
-            "componentDidCatch",
-            "componentWillUnmount"
-          ]
-        }
-      }
-    ],
-    "react-hooks/rules-of-hooks": 2,
+    "no-var": 2,
+    "no-console": 1,
+    "no-debugger": 2,
     "prettier/prettier": [
       2,
       {
@@ -180,21 +115,14 @@ These are the rules resulting of current configuration in `eslintrc.js`
       }
     ]
   },
-  "parserOptions": {
-    "ecmaFeatures": {
-      "jsx": true
-    }
-  },
-  "plugins": [
-    "react",
-    "prettier",
-    "react-hooks"
-  ],
+  "parserOptions": {},
   "extends": [
-    "plugin:react/recommended",
     "prettier"
   ],
-  "parser": "/Users/usuario/front-linter/node_modules/babel-eslint/lib/index.js"
+  "parser": "/Users/usuario/@rogal/front-linter/node_modules/babel-eslint/lib/index.js",
+  "plugins": [
+    "prettier"
+  ]
 }
 ```
 
