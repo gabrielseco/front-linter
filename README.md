@@ -121,7 +121,7 @@ Steps to integrate front-linter with an IDE:
   },
   "stylelint": {
     "extends": [
-      "./node_modules/@rogal/front-linter/.stylelintrc.json"
+      "./node_modules/@rogal/front-linter/.stylelintrc.js"
     ]
   }
 }
@@ -141,7 +141,7 @@ Steps to integrate front-linter with an IDE:
   },
   "stylelint": {
     "extends": [
-      "./node_modules/@rogal/front-linter/.stylelintrc.json"
+      "./node_modules/@rogal/front-linter/.stylelintrc.js"
     ]
   }
 }
@@ -163,7 +163,7 @@ Steps to integrate front-linter with an IDE:
   "eslintConfig": { "extends": ["./node_modules/@rogal/front-linter/default-preset-eslint.js"] },
   "stylelint": {
     "extends": [
-      "./node_modules/@rogal/front-linter/.stylelintrc.json"
+      "./node_modules/@rogal/front-linter/.stylelintrc.js"
     ]
   }
 }
@@ -185,7 +185,7 @@ Steps to integrate front-linter with an IDE:
   "eslintConfig": { "extends": ["./node_modules/@rogal/front-linter/typescript-react-eslint.js"] },
   "stylelint": {
     "extends": [
-      "./node_modules/@rogal/front-linter/.stylelintrc.json"
+      "./node_modules/@rogal/front-linter/.stylelintrc.js"
     ]
   }
 }

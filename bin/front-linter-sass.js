@@ -6,7 +6,7 @@ const {
   getFilesToLint
 } = require('../src/helpers');
 const BIN_PATH = require.resolve('stylelint/bin/stylelint');
-const CONFIG_PATH = require.resolve('../.stylelintrc.json');
+const CONFIG_PATH = require.resolve('../.stylelintrc');
 const EXTENSIONS = ['scss'];
 const IGNORE_PATTERNS = ['**/node_modules/**', '**/lib/**', '**/dist/**'];
 
