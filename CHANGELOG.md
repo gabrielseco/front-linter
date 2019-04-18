@@ -10,6 +10,17 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 ### Removed
 
+## [2.1.0] - 2019-04-18
+### Added
+- Typescript default config
+
+### Changed
+- Update prettier
+- Change quotes-props as consistent
+
+### Fixed
+- Extensions to lint
+
 ## [2.0.1] - 2019-04-08
 ### Fixed
 - Remove stylelint rules

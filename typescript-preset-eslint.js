@@ -1,6 +1,6 @@
 module.exports = {
   extends: ['prettier'],
-  parser: 'babel-eslint',
+  parser: 'pluggable-babel-eslint',
   plugins: ['prettier'],
   rules: {
     'no-unused-vars': [
@@ -24,11 +24,16 @@ module.exports = {
         bracketSpacing: true,
         semi: true,
         useTabs: false,
-        parser: 'babel',
+        parser: 'typescript',
         jsxBracketSameLine: false,
         arrowParens: 'avoid',
         quoteProps: 'consistent'
       }
     ]
+  },
+  parserOptions: {
+    plugins: ['typescript'],
+    ecmaVersion: 2018,
+    sourceType: 'module'
   }
 };

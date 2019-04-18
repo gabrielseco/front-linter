@@ -6,6 +6,7 @@ const { PRESET_TYPES } = require('./../src/presets');
 
 const presets = {
   defaultPreset: [PRESET_TYPES.JAVASCRIPT],
+  typescriptPreset: [PRESET_TYPES.TYPESCRIPT],
   reactJavascript: [PRESET_TYPES.JAVASCRIPT, PRESET_TYPES.REACT],
   reactTypescript: [PRESET_TYPES.TYPESCRIPT, PRESET_TYPES.REACT]
 };
@@ -21,6 +22,14 @@ fs.writeFile(
   MAKE_CONFIG_FILE(CONFIGURATION(presets.defaultPreset)),
   err => {
     console.log('error default', err);
+  }
+);
+
+fs.writeFile(
+  './typescript-preset-eslint.js',
+  MAKE_CONFIG_FILE(CONFIGURATION(presets.typescriptPreset)),
+  err => {
+    console.log('error typescript default', err);
   }
 );
 
