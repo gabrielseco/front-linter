@@ -1,6 +1,6 @@
 {
   "name": "@rogal/front-linter",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "description": "Linting CLI for Frontend Projects",
   "main": "./bin/front-linter.js",
   "bin": {
@@ -12,6 +12,7 @@
     "lint-stage": "./node_modules/.bin/eslint --config=./default-preset-eslint.js --ignore-pattern !.prettierrc.js",
     "lint": "./node_modules/.bin/eslint --config=./default-preset-eslint.js bin src default-preset-eslint.js .prettierrc.js --ignore-pattern !.prettierrc.js",
     "eslint:print-rules-js": "./node_modules/.bin/eslint --config=./default-preset-eslint.js --print-config .",
+    "eslint:print-rules-ts": "./node_modules/.bin/eslint --config=./typescript-preset-eslint.js --print-config .",
     "eslint:print-rules-js-react": "./node_modules/.bin/eslint --config=./javascript-react-eslint.js --print-config .",
     "eslint:print-rules-ts-react": "./node_modules/.bin/eslint --config=./typescript-react-eslint.js --print-config .",
     "eslint:prettier-check": "./node_modules/.bin/eslint --config=./default-preset-eslint.js --print-config . | ./node_modules/.bin/eslint-config-prettier-check"
@@ -31,7 +32,7 @@
     "eslint-plugin-react-hooks": "^1.6.0",
     "figures": "^2.0.0",
     "pluggable-babel-eslint": "^0.3.0",
-    "prettier": "1.16.4",
+    "prettier": "1.17.0",
     "simple-git": "1.92.0",
     "stylelint": "^9.10.1",
     "stylelint-config-sass-guidelines": "^5.3.0",
@@ -46,6 +47,10 @@
     "src/**/*.js": "npm run lint-stage",
     "bin/**/*.js": "npm run lint-stage",
     "default-preset-eslint.js": [
+      "npm run lint-stage",
+      "git add"
+    ],
+    "typescript-preset-eslint.js": [
       "npm run lint-stage",
       "git add"
     ],

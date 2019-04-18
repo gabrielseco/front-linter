@@ -1,5 +1,6 @@
 const ESLINT_FILES = {
   defaultPreset: require.resolve('./../default-preset-eslint.js'),
+  typescriptPreset: require.resolve('./../typescript-preset-eslint.js'),
   reactJavascript: require.resolve('./../javascript-react-eslint.js'),
   reactTypescript: require.resolve('./../typescript-react-eslint.js')
 };
@@ -41,6 +42,14 @@ const getEslintFilePreset = presets => {
     !presets.includes(PRESET_TYPES.REACT)
   ) {
     return ESLINT_FILES.defaultPreset;
+  }
+
+  if (
+    !presets.includes(PRESET_TYPES.JAVASCRIPT) &&
+    presets.includes(PRESET_TYPES.TYPESCRIPT) &&
+    !presets.includes(PRESET_TYPES.REACT)
+  ) {
+    return ESLINT_FILES.typescriptPreset;
   }
 
   if (
