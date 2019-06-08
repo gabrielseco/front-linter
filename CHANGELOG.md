@@ -10,6 +10,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 ### Removed
 
+## [2.2.0] - 2019-05-08
+### Added
+- Update prettier to last version
+- Add react settings to eslint with the detect feature
+
 ## [2.1.0] - 2019-04-18
 ### Added
 - Typescript default config
