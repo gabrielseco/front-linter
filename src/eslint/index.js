@@ -1,7 +1,8 @@
 const {
   GET_ESLINT_RULES,
   GET_EXTENDS_ESLINT,
-  GET_PLUGINS_ESLINT
+  GET_PLUGINS_ESLINT,
+  GET_SETTINGS_REACT
 } = require('./common');
 
 const { PRESET_TYPES } = require('./../presets');
@@ -17,7 +18,8 @@ const CONFIG = presets => {
     extends: GET_EXTENDS_ESLINT(AVAILABLE_PRESETS_OPTIONS(presets)),
     parser: 'babel-eslint',
     plugins: GET_PLUGINS_ESLINT(AVAILABLE_PRESETS_OPTIONS(presets)),
-    rules: GET_ESLINT_RULES(AVAILABLE_PRESETS_OPTIONS(presets))
+    rules: GET_ESLINT_RULES(AVAILABLE_PRESETS_OPTIONS(presets)),
+    ...GET_SETTINGS_REACT(AVAILABLE_PRESETS_OPTIONS(presets))
   };
 
   const typescriptConfig = {

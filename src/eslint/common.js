@@ -70,6 +70,21 @@ const GET_PRETTIER_OPTIONS = typescript => ({
   parser: typescript ? 'typescript' : 'babel'
 });
 
+const GET_SETTINGS_REACT = ({ react }) => {
+  if (react) {
+    return {
+      settings: {
+        react: {
+          pragma: 'React',
+          version: 'detect'
+        }
+      }
+    };
+  }
+
+  return undefined;
+};
+
 const GET_ESLINT_RULES = ({ javascript, typescript, react }) => {
   const commonRules = javascript || typescript ? COMMON_RULES : undefined;
   const reactRules = react ? REACT_RULES : undefined;
@@ -99,5 +114,6 @@ const GET_PLUGINS_ESLINT = ({ javascript, typescript, react }) => {
 module.exports = {
   GET_ESLINT_RULES,
   GET_EXTENDS_ESLINT,
-  GET_PLUGINS_ESLINT
+  GET_PLUGINS_ESLINT,
+  GET_SETTINGS_REACT
 };
