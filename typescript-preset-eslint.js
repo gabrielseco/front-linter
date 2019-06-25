@@ -1,4 +1,8 @@
 module.exports = {
+  env: {
+    browser: true,
+    node: true
+  },
   extends: ['prettier'],
   parser: 'pluggable-babel-eslint',
   plugins: ['prettier'],
@@ -11,6 +15,7 @@ module.exports = {
         ignoreRestSiblings: false
       }
     ],
+    'no-undef': 2,
     'no-var': 2,
     'no-console': 1,
     'no-debugger': 2,

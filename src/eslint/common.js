@@ -11,6 +11,7 @@ const COMMON_RULES = {
     RULES.ERROR,
     { vars: 'all', args: 'after-used', ignoreRestSiblings: false }
   ],
+  'no-undef': RULES.ERROR,
   'no-var': RULES.ERROR,
   'no-console': RULES.WARNING,
   'no-debugger': RULES.ERROR

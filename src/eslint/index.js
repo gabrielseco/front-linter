@@ -15,6 +15,11 @@ const AVAILABLE_PRESETS_OPTIONS = presets => ({
 
 const CONFIG = presets => {
   const defaultConfig = {
+    env: {
+      browser: true,
+      node: true,
+      es6: true
+    },
     extends: GET_EXTENDS_ESLINT(AVAILABLE_PRESETS_OPTIONS(presets)),
     parser: 'babel-eslint',
     plugins: GET_PLUGINS_ESLINT(AVAILABLE_PRESETS_OPTIONS(presets)),
