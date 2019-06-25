@@ -10,6 +10,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 ### Removed
 
+## [2.3.0] - 2019-06-25
+### Added
+- Add no-undef rule and declare environments
+
 ## [2.2.0] - 2019-05-08
 ### Added
 - Update prettier to last version
