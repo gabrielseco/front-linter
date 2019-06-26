@@ -18,7 +18,8 @@ const CONFIG = presets => {
     env: {
       browser: true,
       node: true,
-      es6: true
+      es6: true,
+      jest: true
     },
     extends: GET_EXTENDS_ESLINT(AVAILABLE_PRESETS_OPTIONS(presets)),
     parser: 'babel-eslint',

@@ -10,6 +10,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 ### Removed
 
+
+## [2.3.1] - 2019-06-26
+### Added
+- Fix jest environment
+
 ## [2.3.0] - 2019-06-25
 ### Added
 - Add no-undef rule and declare environments
