@@ -1,6 +1,6 @@
-import { danger, fail, warn } from "danger"
-import includes from "lodash.includes"
-import first from "lodash.first"
+const { danger, fail, warn } = require("danger");
+const includes = require("lodash.includes");
+const first = require("lodash.first");
 
 const hasCHANGELOGChanges = includes(danger.git.modified_files, "CHANGELOG.md")
 const hasLibraryChanges = first(danger.git.modified_files, path => path.startsWith("src/"))
