@@ -44,7 +44,6 @@
     "danger": "^9.1.0",
     "husky": "2.4.0",
     "lint-staged": "^8.2.0",
-    "lodash.first": "^3.0.0",
     "lodash.includes": "^4.3.0"
   },
   "lint-staged": {
