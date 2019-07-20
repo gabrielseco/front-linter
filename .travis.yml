@@ -7,4 +7,4 @@ notifications:
 node_js:
   - node
 before_script:
-- npm run danger ci
+- npm run danger-ci
