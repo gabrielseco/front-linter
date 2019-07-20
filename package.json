@@ -7,7 +7,7 @@
     "front-linter": "./bin/front-linter.js"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "",
     "build-lint-files": "node scripts/createEslintFiles",
     "lint-stage": "./node_modules/.bin/eslint --config=./default-preset-eslint.js --ignore-pattern !.prettierrc.js",
     "lint": "./node_modules/.bin/eslint --config=./default-preset-eslint.js bin src default-preset-eslint.js .prettierrc.js --ignore-pattern !.prettierrc.js",
@@ -15,7 +15,8 @@
     "eslint:print-rules-ts": "./node_modules/.bin/eslint --config=./typescript-preset-eslint.js --print-config .",
     "eslint:print-rules-js-react": "./node_modules/.bin/eslint --config=./javascript-react-eslint.js --print-config .",
     "eslint:print-rules-ts-react": "./node_modules/.bin/eslint --config=./typescript-react-eslint.js --print-config .",
-    "eslint:prettier-check": "./node_modules/.bin/eslint --config=./default-preset-eslint.js --print-config . | ./node_modules/.bin/eslint-config-prettier-check"
+    "eslint:prettier-check": "./node_modules/.bin/eslint --config=./default-preset-eslint.js --print-config . | ./node_modules/.bin/eslint-config-prettier-check",
+    "danger-ci": "danger ci"
   },
   "keywords": [],
   "author": "",
@@ -40,8 +41,10 @@
     "stylelint-scss": "^3.5.4"
   },
   "devDependencies": {
+    "danger": "^9.1.0",
     "husky": "2.4.0",
-    "lint-staged": "^8.2.0"
+    "lint-staged": "^8.2.0",
+    "lodash.includes": "^4.3.0"
   },
   "lint-staged": {
     "src/**/*.js": "npm run lint-stage",
