@@ -11,7 +11,7 @@ module.exports = {
     'plugin:jsx-a11y/recommended'
   ],
   parser: 'pluggable-babel-eslint',
-  plugins: ['prettier', 'react-hooks', 'jsx-a11y'],
+  plugins: ['prettier', 'import', 'react-hooks', 'jsx-a11y'],
   rules: {
     'no-unused-vars': [
       2,
@@ -25,6 +25,21 @@ module.exports = {
     'no-var': 2,
     'no-console': 1,
     'no-debugger': 2,
+    'import/newline-after-import': 2,
+    'import/order': [
+      2,
+      {
+        'newlines-between': 'always',
+        'groups': [
+          'builtin',
+          'external',
+          'internal',
+          'parent',
+          'sibling',
+          'index'
+        ]
+      }
+    ],
     'react/jsx-no-undef': 2,
     'react/jsx-no-duplicate-props': [
       1,
