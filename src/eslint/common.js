@@ -14,7 +14,22 @@ const COMMON_RULES = {
   'no-undef': RULES.ERROR,
   'no-var': RULES.ERROR,
   'no-console': RULES.WARNING,
-  'no-debugger': RULES.ERROR
+  'no-debugger': RULES.ERROR,
+  'import/newline-after-import': RULES.ERROR,
+  'import/order': [
+    RULES.ERROR,
+    {
+      'newlines-between': 'always',
+      'groups': [
+        'builtin',
+        'external',
+        'internal',
+        'parent',
+        'sibling',
+        'index'
+      ]
+    }
+  ]
 };
 
 const REACT_RULES = {
@@ -100,13 +115,13 @@ const GET_EXTENDS_ESLINT = ({ javascript, typescript, react }) => {
   const commonExtends = javascript || typescript ? ['prettier'] : [];
   const reactExtends = react
     ? ['plugin:react/recommended', 'plugin:jsx-a11y/recommended']
-    : [];
+    : ['plugin:import/recommended'];
 
   return [...commonExtends, ...reactExtends];
 };
 
 const GET_PLUGINS_ESLINT = ({ javascript, typescript, react }) => {
-  const commonPlugins = javascript || typescript ? ['prettier'] : [];
+  const commonPlugins = javascript || typescript ? ['prettier', 'import'] : [];
   const reactPlugins = react ? ['react-hooks', 'jsx-a11y'] : [];
 
   return [...commonPlugins, ...reactPlugins];

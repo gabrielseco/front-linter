@@ -5,9 +5,9 @@ module.exports = {
     es6: true,
     jest: true
   },
-  extends: ['prettier'],
+  extends: ['prettier', 'plugin:import/recommended'],
   parser: 'babel-eslint',
-  plugins: ['prettier'],
+  plugins: ['prettier', 'import'],
   rules: {
     'no-unused-vars': [
       2,
@@ -21,6 +21,21 @@ module.exports = {
     'no-var': 2,
     'no-console': 1,
     'no-debugger': 2,
+    'import/newline-after-import': 2,
+    'import/order': [
+      2,
+      {
+        'newlines-between': 'always',
+        'groups': [
+          'builtin',
+          'external',
+          'internal',
+          'parent',
+          'sibling',
+          'index'
+        ]
+      }
+    ],
     'prettier/prettier': [
       2,
       {
