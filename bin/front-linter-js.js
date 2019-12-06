@@ -8,7 +8,6 @@ const {
   isOptionSet,
   stageFilesIfRequired
 } = require('../src/helpers');
-
 const {
   PRESET_TYPES,
   getPresetsFromCommandLine,

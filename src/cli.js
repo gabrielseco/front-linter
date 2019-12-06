@@ -1,11 +1,14 @@
 /* eslint no-console:0 */
 const { spawn } = require('child_process');
-const CODE_OK = 0;
-const log = console.log;
+const path = require('path');
+
 const colors = require('colors');
 const program = require('commander');
 const figures = require('figures');
-const path = require('path');
+
+const CODE_OK = 0;
+const log = console.log;
+
 const isWin = process.platform === 'win32';
 
 /**

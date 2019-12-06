@@ -111,8 +111,17 @@ const GET_ESLINT_RULES = ({ javascript, typescript, react }) => {
   };
 };
 
+const getCommonExtends = ({ typescript }) => {
+  const commonExtends = ['prettier'];
+  if (typescript) {
+    return [...commonExtends, 'plugin:@typescript-eslint/recommended'];
+  }
+  return commonExtends;
+};
+
 const GET_EXTENDS_ESLINT = ({ javascript, typescript, react }) => {
-  const commonExtends = javascript || typescript ? ['prettier'] : [];
+  const commonExtends =
+    javascript || typescript ? getCommonExtends({ typescript }) : [];
   const reactExtends = react
     ? ['plugin:react/recommended', 'plugin:jsx-a11y/recommended']
     : ['plugin:import/recommended'];
@@ -120,8 +129,21 @@ const GET_EXTENDS_ESLINT = ({ javascript, typescript, react }) => {
   return [...commonExtends, ...reactExtends];
 };
 
+const getCommonPlugins = ({ typescript }) => {
+  const commonPlugins = ['prettier', 'import'];
+
+  if (typescript === true) {
+    return [...commonPlugins, '@typescript-eslint'];
+  }
+
+  return commonPlugins;
+};
+
 const GET_PLUGINS_ESLINT = ({ javascript, typescript, react }) => {
-  const commonPlugins = javascript || typescript ? ['prettier', 'import'] : [];
+  const commonPlugins =
+    javascript || typescript
+      ? getCommonPlugins({ javascript, typescript })
+      : [];
   const reactPlugins = react ? ['react-hooks', 'jsx-a11y'] : [];
 
   return [...commonPlugins, ...reactPlugins];

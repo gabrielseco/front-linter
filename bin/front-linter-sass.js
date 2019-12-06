@@ -5,6 +5,7 @@ const {
   getGitIgnoredFiles,
   getFilesToLint
 } = require('../src/helpers');
+
 const BIN_PATH = require.resolve('stylelint/bin/stylelint');
 const CONFIG_PATH = require.resolve('../.stylelintrc');
 const EXTENSIONS = ['scss'];
