@@ -5,9 +5,13 @@ module.exports = {
     es6: true,
     jest: true
   },
-  extends: ['prettier', 'plugin:import/recommended'],
-  parser: 'pluggable-babel-eslint',
-  plugins: ['prettier', 'import'],
+  extends: [
+    'prettier',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:import/recommended'
+  ],
+  parser: '@typescript-eslint/parser',
+  plugins: ['prettier', 'import', '@typescript-eslint'],
   rules: {
     'no-unused-vars': [
       2,

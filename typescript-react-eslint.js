@@ -7,11 +7,18 @@ module.exports = {
   },
   extends: [
     'prettier',
+    'plugin:@typescript-eslint/recommended',
     'plugin:react/recommended',
     'plugin:jsx-a11y/recommended'
   ],
-  parser: 'pluggable-babel-eslint',
-  plugins: ['prettier', 'import', 'react-hooks', 'jsx-a11y'],
+  parser: '@typescript-eslint/parser',
+  plugins: [
+    'prettier',
+    'import',
+    '@typescript-eslint',
+    'react-hooks',
+    'jsx-a11y'
+  ],
   rules: {
     'no-unused-vars': [
       2,

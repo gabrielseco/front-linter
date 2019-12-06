@@ -1,4 +1,4 @@
-const { danger, fail, warn } = require("danger");
+const { danger, fail } = require("danger");
 const includes = require("lodash.includes");
 
 const hasCHANGELOGChanges = includes(danger.git.modified_files, "CHANGELOG.md")

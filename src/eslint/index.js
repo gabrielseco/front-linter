@@ -4,7 +4,6 @@ const {
   GET_PLUGINS_ESLINT,
   GET_SETTINGS_REACT
 } = require('./common');
-
 const { PRESET_TYPES } = require('./../presets');
 
 const AVAILABLE_PRESETS_OPTIONS = presets => ({
@@ -29,7 +28,7 @@ const CONFIG = presets => {
   };
 
   const typescriptConfig = {
-    parser: 'pluggable-babel-eslint',
+    parser: '@typescript-eslint/parser',
     parserOptions: {
       plugins: ['typescript'],
       ecmaVersion: 2018,

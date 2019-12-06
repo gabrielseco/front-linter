@@ -10,6 +10,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 ### Removed
 
+## [2.5.0] - 2019-12-06
+
+## Changed
+  - New typescript plugins for eslint dropping some internal packages to make it work
+  - Update prettier packages
+
 ## [2.4.0] - 2019-08-17
 
 ### Added
