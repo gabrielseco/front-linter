@@ -1,6 +1,6 @@
 {
   "name": "@rogal/front-linter",
-  "version": "2.5.0",
+  "version": "2.5.1",
   "description": "Linting CLI for Frontend Projects",
   "main": "./bin/front-linter.js",
   "bin": {
@@ -9,7 +9,7 @@
   "scripts": {
     "test": "",
     "build-lint-files": "node scripts/createEslintFiles",
-    "lint-stage": "./node_modules/.bin/eslint --config=./default-preset-eslint.js --ignore-pattern !.prettierrc.js",
+    "lint-stage": "./node_modules/.bin/eslint --config=./default-preset-eslint.js --ignore-pattern !.prettierrc.js --fix",
     "lint": "./node_modules/.bin/eslint --config=./default-preset-eslint.js bin src default-preset-eslint.js .prettierrc.js --ignore-pattern !.prettierrc.js",
     "eslint:print-rules-js": "./node_modules/.bin/eslint --config=./default-preset-eslint.js --print-config .",
     "eslint:print-rules-ts": "./node_modules/.bin/eslint --config=./typescript-preset-eslint.js --print-config .",

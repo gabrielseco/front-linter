@@ -10,6 +10,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 ### Removed
 
+## [2.5.1] - 2019-12-25
+
+## Changed
+  - Ban ts-ignore
+  - Unused vars should be warning
+  - Presets should only lint their own files
+
 ## [2.5.0] - 2019-12-06
 
 ## Changed

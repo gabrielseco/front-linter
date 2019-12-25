@@ -8,7 +8,7 @@ const RULES = {
 
 const COMMON_RULES = {
   'no-unused-vars': [
-    RULES.ERROR,
+    RULES.WARNING,
     { vars: 'all', args: 'after-used', ignoreRestSiblings: false }
   ],
   'no-undef': RULES.ERROR,
@@ -104,9 +104,15 @@ const GET_SETTINGS_REACT = ({ react }) => {
 const GET_ESLINT_RULES = ({ javascript, typescript, react }) => {
   const commonRules = javascript || typescript ? COMMON_RULES : undefined;
   const reactRules = react ? REACT_RULES : undefined;
+  const typescriptRules = typescript
+    ? {
+        '@typescript-eslint/ban-ts-ignore': RULES.WARNING
+      }
+    : undefined;
   return {
     ...commonRules,
     ...reactRules,
+    ...typescriptRules,
     'prettier/prettier': [RULES.ERROR, GET_PRETTIER_OPTIONS(typescript)]
   };
 };

@@ -16,12 +16,15 @@ const {
 } = require('../src/presets');
 
 const BIN_PATH = require.resolve('eslint/bin/eslint');
-const EXTENSIONS = ['js', 'jsx', 'ts', 'tsx'];
 const IGNORE_PATTERNS = ['lib', 'dist', 'public', 'node_modules'];
 
 const patterns = IGNORE_PATTERNS.concat(getGitIgnoredFiles());
 
 const presets = getPresetsFromCommandLine() || [PRESET_TYPES.JAVASCRIPT];
+
+const EXTENSIONS = presets.includes(PRESET_TYPES.TYPESCRIPT)
+  ? ['ts', 'tsx']
+  : ['js', 'jsx'];
 
 getFilesToLint(EXTENSIONS).then(
   files =>

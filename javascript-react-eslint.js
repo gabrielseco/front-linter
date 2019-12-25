@@ -14,7 +14,7 @@ module.exports = {
   plugins: ['prettier', 'import', 'react-hooks', 'jsx-a11y'],
   rules: {
     'no-unused-vars': [
-      2,
+      1,
       {
         vars: 'all',
         args: 'after-used',

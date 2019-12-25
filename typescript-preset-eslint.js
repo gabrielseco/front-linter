@@ -14,7 +14,7 @@ module.exports = {
   plugins: ['prettier', 'import', '@typescript-eslint'],
   rules: {
     'no-unused-vars': [
-      2,
+      1,
       {
         vars: 'all',
         args: 'after-used',
@@ -40,6 +40,7 @@ module.exports = {
         ]
       }
     ],
+    '@typescript-eslint/ban-ts-ignore': 1,
     'prettier/prettier': [
       2,
       {
