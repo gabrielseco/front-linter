@@ -21,7 +21,7 @@ module.exports = {
   ],
   rules: {
     'no-unused-vars': [
-      2,
+      1,
       {
         vars: 'all',
         args: 'after-used',
@@ -98,6 +98,7 @@ module.exports = {
     ],
     'react-hooks/rules-of-hooks': 2,
     'react-hooks/exhaustive-deps': 1,
+    '@typescript-eslint/ban-ts-ignore': 1,
     'prettier/prettier': [
       2,
       {
