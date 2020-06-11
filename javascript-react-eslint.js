@@ -103,7 +103,7 @@ module.exports = {
         useTabs: false,
         parser: 'babel',
         jsxBracketSameLine: false,
-        arrowParens: 'avoid',
+        arrowParens: 'always',
         quoteProps: 'consistent'
       }
     ]

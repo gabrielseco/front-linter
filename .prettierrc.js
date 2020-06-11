@@ -9,5 +9,6 @@ module.exports = {
   parser: 'babel',
   jsxBracketSameLine: false,
   arrowParens: 'avoid',
-  quoteProps: 'consistent'
+  quoteProps: 'consistent',
+  arrowParens: 'always'
 };
