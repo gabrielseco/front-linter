@@ -10,6 +10,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 ### Removed
 
+## [3.0.0-beta.0] - 2020-06-13
+
+## Changed
+  - Updated prettier 2.0
+  - Updated to eslint 7
+
 ## [2.5.1] - 2019-12-25
 
 ## Changed
