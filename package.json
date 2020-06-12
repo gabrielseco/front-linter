@@ -1,6 +1,6 @@
 {
   "name": "@rogal/front-linter",
-  "version": "3.0.0-beta.0",
+  "version": "3.0.0-beta.1",
   "description": "Linting CLI for Frontend Projects",
   "main": "./bin/front-linter.js",
   "bin": {
@@ -11,11 +11,6 @@
     "build-lint-files": "node scripts/createEslintFiles",
     "lint-stage": "./node_modules/.bin/eslint --config=./default-preset-eslint.js --ignore-pattern !.prettierrc.js --fix",
     "lint": "./node_modules/.bin/eslint --config=./default-preset-eslint.js bin src default-preset-eslint.js .prettierrc.js --ignore-pattern !.prettierrc.js",
-    "eslint:print-rules-js": "./node_modules/.bin/eslint --config=./default-preset-eslint.js --print-config .",
-    "eslint:print-rules-ts": "./node_modules/.bin/eslint --config=./typescript-preset-eslint.js --print-config .",
-    "eslint:print-rules-js-react": "./node_modules/.bin/eslint --config=./javascript-react-eslint.js --print-config .",
-    "eslint:print-rules-ts-react": "./node_modules/.bin/eslint --config=./typescript-react-eslint.js --print-config .",
-    "eslint:prettier-check": "./node_modules/.bin/eslint --config=./default-preset-eslint.js --print-config . | ./node_modules/.bin/eslint-config-prettier-check",
     "danger-ci": "danger ci"
   },
   "keywords": [],

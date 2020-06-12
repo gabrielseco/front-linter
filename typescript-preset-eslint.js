@@ -40,7 +40,6 @@ module.exports = {
         ]
       }
     ],
-    '@typescript-eslint/ban-ts-ignore': 1,
     'prettier/prettier': [
       2,
       {

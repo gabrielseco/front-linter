@@ -10,6 +10,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 ### Removed
 
+## [3.0.0-beta.1] - 2020-06-13
+## Fixed
+  - Fixed ban-ts-ignore
+
 ## [3.0.0-beta.0] - 2020-06-13
 
 ## Changed
