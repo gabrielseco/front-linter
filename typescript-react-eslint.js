@@ -111,7 +111,7 @@ module.exports = {
         useTabs: false,
         parser: 'typescript',
         jsxBracketSameLine: false,
-        arrowParens: 'avoid',
+        arrowParens: 'always',
         quoteProps: 'consistent'
       }
     ]
