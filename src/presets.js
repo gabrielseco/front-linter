@@ -16,7 +16,7 @@ const PRESET_TYPES = {
  * @return {Array<String>} array of strings with the presets or undefined
  */
 const getPresetsFromCommandLine = () => {
-  const presetsArgument = process.argv.find(arg => arg.includes('--presets'));
+  const presetsArgument = process.argv.find((arg) => arg.includes('--presets'));
 
   if (presetsArgument === undefined) {
     return;
@@ -35,7 +35,7 @@ const getPresetsFromCommandLine = () => {
  * Get eslint file
  * @return an eslint file is returned
  */
-const getEslintFilePreset = presets => {
+const getEslintFilePreset = (presets) => {
   if (
     presets.includes(PRESET_TYPES.JAVASCRIPT) &&
     !presets.includes(PRESET_TYPES.TYPESCRIPT) &&
@@ -81,7 +81,7 @@ const getEslintFilePreset = presets => {
  * Get the type of file
  * @return a type of file is returned
  */
-const getTypeOfFile = presets => {
+const getTypeOfFile = (presets) => {
   if (presets.includes(PRESET_TYPES.JAVASCRIPT)) {
     return PRESET_TYPES.JAVASCRIPT;
   }

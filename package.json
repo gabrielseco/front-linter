@@ -1,6 +1,6 @@
 {
   "name": "@rogal/front-linter",
-  "version": "3.0.0-beta.1",
+  "version": "3.0.0-beta.2",
   "description": "Linting CLI for Frontend Projects",
   "main": "./bin/front-linter.js",
   "bin": {
@@ -9,7 +9,6 @@
   "scripts": {
     "test": "",
     "build-lint-files": "node scripts/createEslintFiles",
-    "lint-stage": "./node_modules/.bin/eslint --config=./default-preset-eslint.js --ignore-pattern !.prettierrc.js --fix",
     "lint": "./node_modules/.bin/eslint --config=./default-preset-eslint.js bin src default-preset-eslint.js .prettierrc.js --ignore-pattern !.prettierrc.js",
     "danger-ci": "danger ci"
   },
@@ -17,22 +16,22 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "@typescript-eslint/eslint-plugin": "^3.2.0",
-    "@typescript-eslint/parser": "^3.2.0",
-    "babel-eslint": "8.2.3",
+    "@typescript-eslint/eslint-plugin": "^3.6.0",
+    "@typescript-eslint/parser": "^3.6.0",
+    "babel-eslint": "10.1.0",
     "colors": "^1.3.3",
     "commander": "2.15.1",
     "eslint": "7.2.0",
-    "eslint-plugin-import": "^2.21.2",
-    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
     "eslint-config-prettier": "^6.11.0",
-    "eslint-plugin-prettier": "^3.1.3",
-    "eslint-plugin-react": "^7.20.0",
-    "eslint-plugin-react-hooks": "^4.0.4",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.20.3",
+    "eslint-plugin-react-hooks": "^4.0.7",
     "figures": "^2.0.0",
     "prettier": "2.0.5",
     "simple-git": "1.92.0",
-    "stylelint": "^13.6.0",
+    "stylelint": "^13.6.1",
     "stylelint-config-sass-guidelines": "^7.0.0",
     "stylelint-declaration-use-variable": "^1.7.2",
     "stylelint-scss": "^3.17.2"
@@ -42,28 +41,33 @@
     "husky": "4.2.5",
     "lint-staged": "^10.2.9",
     "lodash.includes": "^4.3.0",
-    "typescript": "3.9.5"
+    "typescript": "3.9.6"
   },
   "lint-staged": {
-    "src/**/*.js": "npm run lint-stage",
-    "bin/**/*.js": "npm run lint-stage",
+    "src/**/*.js": "npm run lint -- --fix",
+    "bin/**/*.js": "npm run lint -- --fix",
     "default-preset-eslint.js": [
-      "npm run lint-stage"
+      "npm run lint -- --fix"
     ],
     "typescript-preset-eslint.js": [
-      "npm run lint-stage"
+      "npm run lint -- --fix"
     ],
     "javascript-react-eslint.js": [
-      "npm run lint-stage"
+      "npm run lint -- --fix"
     ],
     "typescript-react-eslint.js": [
-      "npm run lint-stage"
+      "npm run lint -- --fix"
     ],
-    ".prettierrc.js": "npm run lint-stage"
+    ".prettierrc.js": "npm run lint -- --fix"
   },
   "husky": {
     "hooks": {
       "pre-commit": "npm run build-lint-files && lint-staged"
     }
+  },
+  "eslintConfig": {
+    "extends": [
+      "./default-preset-eslint.js"
+    ]
   }
 }

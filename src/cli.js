@@ -19,12 +19,12 @@ const isWin = process.platform === 'win32';
  * @return {Promise<Number>} Process exit code
  */
 function getSpawnPromise(bin, args, options = {}) {
-  return new Promise(function(resolve, reject) {
+  return new Promise(function (resolve, reject) {
     if (options.stdio !== 'ignore') {
       log('');
       log(getCommandCallMessage(bin, args, options));
     }
-    getSpawnProcess(bin, args, options).on('exit', code => {
+    getSpawnProcess(bin, args, options).on('exit', (code) => {
       code === CODE_OK ? resolve(code) : reject(code);
     });
   });
@@ -70,11 +70,7 @@ function getArrangedCommand(bin, args, opts) {
  */
 function getCommandCallMessage(bin, args, options = {}) {
   const folder = options.cwd
-    ? '@' +
-      options.cwd
-        .split(path.sep)
-        .slice(-2)
-        .join(path.sep)
+    ? '@' + options.cwd.split(path.sep).slice(-2).join(path.sep)
     : '';
   const command = bin.split(path.sep).pop() + ' ' + args.join(' ');
   return `${command} ${folder.grey}`;
@@ -89,14 +85,14 @@ function getCommandCallMessage(bin, args, options = {}) {
  * @return
  */
 const showError = (msg, foreignProgram) => {
-  const logRed = txt => console.log(colors.red(txt));
+  const logRed = (txt) => console.log(colors.red(txt));
   logRed(
     `\n${figures.cross} An error occurred during command execution. Info:\n`
   );
   logRed(colors.red(msg)); // eslint-disable-line no-console
   foreignProgram
-    ? foreignProgram.outputHelp(txt => txt)
-    : program.outputHelp(txt => txt);
+    ? foreignProgram.outputHelp((txt) => txt)
+    : program.outputHelp((txt) => txt);
 
   process.exit(1);
 };
