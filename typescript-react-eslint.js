@@ -47,6 +47,7 @@ module.exports = {
         ]
       }
     ],
+    'import/no-default-export': 'error',
     'react/jsx-no-undef': 2,
     'react/jsx-no-duplicate-props': [
       1,
@@ -61,6 +62,7 @@ module.exports = {
     'react/no-unused-prop-types': 2,
     'react/prop-types': 2,
     'react/sort-prop-types': 2,
+    'react/jsx-fragments': ['error', 'element'],
     'react/sort-comp': [
       2,
       {
@@ -116,9 +118,12 @@ module.exports = {
     ]
   },
   settings: {
-    react: {
+    'react': {
       pragma: 'React',
       version: 'detect'
+    },
+    'import/resolver': {
+      typescript: {}
     }
   },
   parserOptions: {

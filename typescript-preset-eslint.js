@@ -40,6 +40,7 @@ module.exports = {
         ]
       }
     ],
+    'import/no-default-export': 'error',
     'prettier/prettier': [
       2,
       {
@@ -56,6 +57,11 @@ module.exports = {
         quoteProps: 'consistent'
       }
     ]
+  },
+  settings: {
+    'import/resolver': {
+      typescript: {}
+    }
   },
   parserOptions: {
     plugins: ['typescript'],

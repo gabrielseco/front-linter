@@ -27,7 +27,7 @@ const EXTENSIONS = presets.includes(PRESET_TYPES.TYPESCRIPT)
   : ['js', 'jsx'];
 
 getFilesToLint(EXTENSIONS).then(
-  files =>
+  (files) =>
     (files.length &&
       executeLintingCommand(BIN_PATH, [
         `-c ${getEslintFilePreset(presets)}`,

@@ -12,8 +12,8 @@ const optionFlags = Object.values(OPTIONS);
  * @param {Array<String>} args process.argv
  * @returns {Array<String>}
  */
-const filterOptionFlags = args =>
-  args.filter(arg => !optionFlags.includes(arg));
+const filterOptionFlags = (args) =>
+  args.filter((arg) => !optionFlags.includes(arg));
 
 /**
  * Execute bin as lint command. If -c is defined, process will be exited.
@@ -25,7 +25,7 @@ function executeLintingCommand(binPath, args) {
   const { showError, getSpawnPromise } = require('./cli');
   const [, , ...processArgs] = filterOptionFlags(process.argv);
 
-  if (processArgs.find(arg => arg === '-c' || arg === '--config')) {
+  if (processArgs.find((arg) => arg === '-c' || arg === '--config')) {
     console.log(
       '[front-linter] Dont use your own config file. Remove `-c` flag'
     );
@@ -34,7 +34,7 @@ function executeLintingCommand(binPath, args) {
 
   const argumentsToLint = args
     .concat(processArgs)
-    .filter(arg => !arg.includes('--presets'));
+    .filter((arg) => !arg.includes('--presets'));
 
   return getSpawnPromise(binPath, argumentsToLint).catch(showError);
 }
@@ -44,7 +44,7 @@ function executeLintingCommand(binPath, args) {
  * @param {String} path
  * @returns {Array<String>}
  */
-const getFileLinesAsArray = path => {
+const getFileLinesAsArray = (path) => {
   const { existsSync, readFileSync } = require('fs');
   return existsSync(path)
     ? readFileSync(path, 'utf8')
@@ -60,7 +60,7 @@ const getFileLinesAsArray = path => {
  * @returns {Array<String>}
  */
 const getGitIgnoredFiles = () =>
-  getFileLinesAsArray(GIT_IGNORE_PATH).filter(line => !line.startsWith('#'));
+  getFileLinesAsArray(GIT_IGNORE_PATH).filter((line) => !line.startsWith('#'));
 
 /**
  * Get multiple value arg
@@ -69,7 +69,7 @@ const getGitIgnoredFiles = () =>
  * @returns {Array<String>} ['--ignore-pattern', 'folder/', ...]
  */
 const getArrayArgs = (arg, values) => {
-  return values.filter(Boolean).map(pattern => `${arg} ${pattern}`);
+  return values.filter(Boolean).map((pattern) => `${arg} ${pattern}`);
 };
 
 /**
@@ -77,17 +77,17 @@ const getArrayArgs = (arg, values) => {
  * @param {Array<String>} extensions Extensions list: ['js', 'sass', 'css']
  * @returns {Promise<Array>} Array of file paths
  */
-const getGitStatusFiles = async extensions => {
+const getGitStatusFiles = async (extensions) => {
   const { extname } = require('path');
   return new Promise((resolve, reject) => {
     require('simple-git')().diff(
       ['--cached', '--name-only', '--diff-filter=d'], // Delete files as excluded
-      function(err, summary) {
+      function (err, summary) {
         err && reject(err);
         const files = summary
           ? summary
               .split('\n')
-              .filter(file => extensions.includes(extname(file).substr(1)))
+              .filter((file) => extensions.includes(extname(file).substr(1)))
           : [];
         resolve(files);
       }
@@ -111,7 +111,7 @@ const getFilesToLint = async (extensions, defaultFiles = './') =>
  * @param {Array<String>} extensions Extensions list: ['js', 'sass', 'css']
  * @returns {Promise}
  */
-const stageFilesIfRequired = async extensions => {
+const stageFilesIfRequired = async (extensions) => {
   const { argv } = process;
   if (argv.includes(OPTIONS.staged) && argv.includes(OPTIONS.addFixes)) {
     const { getSpawnPromise } = require('./cli');
@@ -124,7 +124,7 @@ const stageFilesIfRequired = async extensions => {
  * Get if current process has option set
  * @param {String} option
  */
-const isOptionSet = option => process.argv.includes(option);
+const isOptionSet = (option) => process.argv.includes(option);
 
 exports.executeLintingCommand = executeLintingCommand;
 exports.getFileLinesAsArray = getFileLinesAsArray;

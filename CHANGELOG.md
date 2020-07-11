@@ -10,6 +10,17 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 ### Removed
 
+## [3.0.0-beta.2] - 2020-07-11
+## Added
+  - Ban default exports
+  - Consistency in fragments
+
+## Updated
+  - Packages
+
+## Fixed
+  - Typescript configuration
+
 ## [3.0.0-beta.1] - 2020-06-13
 ## Fixed
   - Fixed ban-ts-ignore

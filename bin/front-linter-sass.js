@@ -14,7 +14,7 @@ const IGNORE_PATTERNS = ['**/node_modules/**', '**/lib/**', '**/dist/**'];
 const patterns = IGNORE_PATTERNS.concat(getGitIgnoredFiles());
 
 getFilesToLint(EXTENSIONS, '**/*.scss').then(
-  files =>
+  (files) =>
     (files.length &&
       executeLintingCommand(BIN_PATH, [
         '--config',

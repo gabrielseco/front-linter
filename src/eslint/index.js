@@ -6,13 +6,13 @@ const {
 } = require('./common');
 const { PRESET_TYPES } = require('./../presets');
 
-const AVAILABLE_PRESETS_OPTIONS = presets => ({
+const AVAILABLE_PRESETS_OPTIONS = (presets) => ({
   javascript: presets.includes(PRESET_TYPES.JAVASCRIPT),
   react: presets.includes(PRESET_TYPES.REACT),
   typescript: presets.includes(PRESET_TYPES.TYPESCRIPT)
 });
 
-const CONFIG = presets => {
+const CONFIG = (presets) => {
   const defaultConfig = {
     env: {
       browser: true,

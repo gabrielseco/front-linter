@@ -29,7 +29,8 @@ const COMMON_RULES = {
         'index'
       ]
     }
-  ]
+  ],
+  'import/no-default-export': 'error'
 };
 
 const REACT_RULES = {
@@ -42,6 +43,7 @@ const REACT_RULES = {
   'react/no-unused-prop-types': RULES.ERROR,
   'react/prop-types': RULES.ERROR,
   'react/sort-prop-types': RULES.ERROR,
+  'react/jsx-fragments': ['error', 'element'],
   'react/sort-comp': [
     RULES.ERROR,
     {
@@ -86,10 +88,16 @@ const GET_PRETTIER_OPTIONS = (typescript) => ({
   parser: typescript ? 'typescript' : 'babel'
 });
 
-const GET_SETTINGS_REACT = ({ react }) => {
+const GET_SETTINGS_REACT = ({ react, typescript }) => {
+  let settings = {
+    settings: {}
+  };
+
   if (react) {
-    return {
+    settings = {
+      ...settings,
       settings: {
+        ...settings.settings,
         react: {
           pragma: 'React',
           version: 'detect'
@@ -98,7 +106,19 @@ const GET_SETTINGS_REACT = ({ react }) => {
     };
   }
 
-  return undefined;
+  if (typescript) {
+    settings = {
+      ...settings,
+      settings: {
+        ...settings.settings,
+        'import/resolver': {
+          typescript: {}
+        }
+      }
+    };
+  }
+
+  return settings;
 };
 
 const GET_ESLINT_RULES = ({ javascript, typescript, react }) => {
