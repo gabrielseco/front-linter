@@ -17,11 +17,11 @@ getFilesToLint(EXTENSIONS, '**/*.scss').then(
   (files) =>
     (files.length &&
       executeLintingCommand(BIN_PATH, [
+        `'${files.join(', ')}'`,
         '--config',
         CONFIG_PATH,
         '--ip',
-        `'${patterns.join(', ')}'`,
-        `'${files.join(', ')}'`
+        `'${patterns.join(', ')}'`
       ])) ||
     console.log('[front-linter sass] No sass files to lint.')
 );

@@ -10,11 +10,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 ### Removed
 
+## [3.0.0-beta.5] - 2020-07-14
+## Fixed
+- Fixed broken stylelint
+
 ## [3.0.0-beta.4] - 2020-07-14
 ## Add
   - Add peerDependency to eslint-import-resolver-typescript for typescript preset
-## Fixed
-  - Stylelint
 
 ## [3.0.0-beta.3] - 2020-07-11
 ## Fixed
