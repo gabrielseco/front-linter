@@ -48,6 +48,12 @@ It lints all `ts|tsx|js|jsx` files in your project, excluding `.eslintignore` an
 
 Same options available in [eslint](https://eslint.org/docs/user-guide/command-line-interface) except one: `-c, --config`. If you try to use this option, an exception will be thrown.
 
+For typescript you'll need to install the **eslint-import-resolver-typescript**
+
+```js
+  npm i --save eslint-import-resolver-typescript
+```
+
 ### Format TS files
 
 ```sh
@@ -190,6 +196,7 @@ Steps to integrate front-linter with an IDE:
   }
 }
 ```
+
 
 ### VSCode and prettier
 
