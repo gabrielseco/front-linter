@@ -4,7 +4,7 @@ on:
     branches:
       - master
 jobs:
-  build:
+  release:
     name: Release
     runs-on: ubuntu-latest
     steps:
@@ -16,7 +16,7 @@ jobs:
         with:
           registry-url: "https://registry.npmjs.org"
       - run: npm install
-      - run: npm test
+      - run: npm run lint
       - run: npm run release:trigger
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

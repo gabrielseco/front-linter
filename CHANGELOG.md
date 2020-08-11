@@ -1,7 +1,3 @@
-# [3.0.0-beta.6](https://github.com/gabrielseco/front-linter/compare/3.0.0-beta.5...3.0.0-beta.6) (2020-08-11)
-
-
-
 # Change Log
 All notable changes to this project will be documented in this file.
 
@@ -13,6 +9,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 ### Fixed
 ### Removed
+
+## [3.0.0-beta.6] - 2020-08-11
+
+## Added
+- no-const-assign rule is added to prevent errors reassigning variables
+
+## Changed
+- react/react-in-jsx-scope rule is now off
 
 ## [3.0.0-beta.5] - 2020-07-14
 ## Fixed
