@@ -15,6 +15,7 @@ const COMMON_RULES = {
   'no-var': RULES.ERROR,
   'no-console': RULES.WARNING,
   'no-debugger': RULES.ERROR,
+  'no-const-assign': RULES.ERROR,
   'import/newline-after-import': RULES.ERROR,
   'import/order': [
     RULES.ERROR,
@@ -36,6 +37,7 @@ const COMMON_RULES = {
 const REACT_RULES = {
   'react/jsx-no-undef': RULES.ERROR,
   'react/jsx-no-duplicate-props': [RULES.WARNING, { ignoreCase: true }],
+  'react/react-in-jsx-scope': RULES.OFF,
   'react/no-access-state-in-setstate': RULES.ERROR,
   'react/no-deprecated': RULES.ERROR,
   'react/no-did-mount-set-state': RULES.ERROR,

@@ -51,7 +51,7 @@ Same options available in [eslint](https://eslint.org/docs/user-guide/command-li
 For typescript you'll need to install the **eslint-import-resolver-typescript**
 
 ```js
-  npm i --save eslint-import-resolver-typescript
+  npm i --save-dev eslint-import-resolver-typescript
 ```
 
 ### Format TS files
