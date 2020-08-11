@@ -21,6 +21,7 @@ module.exports = {
     'no-var': 2,
     'no-console': 1,
     'no-debugger': 2,
+    'no-const-assign': 2,
     'import/newline-after-import': 2,
     'import/order': [
       2,
