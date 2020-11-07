@@ -42,11 +42,11 @@
     "eslint-import-resolver-typescript": "2.x"
   },
   "devDependencies": {
-    "danger": "^10.2.0",
+    "danger": "10.2.0",
     "husky": "4.2.5",
-    "lint-staged": "^10.2.9",
-    "lodash.includes": "^4.3.0",
-    "shipjs": "^0.20.1"
+    "lint-staged": "10.2.9",
+    "lodash.includes": "4.3.0",
+    "shipjs": "0.20.1"
   },
   "lint-staged": {
     "src/**/*.js": "npm run lint -- --fix",
