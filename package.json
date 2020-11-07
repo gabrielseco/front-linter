@@ -43,7 +43,7 @@
   },
   "devDependencies": {
     "danger": "10.2.0",
-    "husky": "4.2.5",
+    "husky": "4.3.0",
     "lint-staged": "10.2.9",
     "lodash.includes": "4.3.0",
     "shipjs": "0.20.1"
