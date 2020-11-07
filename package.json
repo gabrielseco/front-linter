@@ -42,7 +42,7 @@
     "eslint-import-resolver-typescript": "2.x"
   },
   "devDependencies": {
-    "danger": "10.2.0",
+    "danger": "10.5.1",
     "husky": "4.3.0",
     "lint-staged": "10.2.9",
     "lodash.includes": "4.3.0",
