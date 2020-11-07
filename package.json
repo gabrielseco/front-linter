@@ -46,7 +46,7 @@
     "husky": "4.3.0",
     "lint-staged": "10.2.9",
     "lodash.includes": "4.3.0",
-    "shipjs": "0.20.1"
+    "shipjs": "0.23.0"
   },
   "lint-staged": {
     "src/**/*.js": "npm run lint -- --fix",
