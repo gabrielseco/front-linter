@@ -10,6 +10,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 ### Removed
 
+## [3.0.0-beta.7] - 2020-11-08
+
+## Changed
+
+- Updated to last eslint packages
+
 ## [3.0.0-beta.6] - 2020-08-11
 
 ## Added
