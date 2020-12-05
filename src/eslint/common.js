@@ -85,6 +85,10 @@ const REACT_RULES = {
   'react-hooks/exhaustive-deps': RULES.WARNING
 };
 
+const TYPESCRIPT_REACT_RULES = {
+  'no-undef': RULES.OFF
+};
+
 const GET_PRETTIER_OPTIONS = (typescript) => ({
   ...prettierOptions,
   parser: typescript ? 'typescript' : 'babel'
@@ -126,10 +130,13 @@ const GET_SETTINGS_REACT = ({ react, typescript }) => {
 const GET_ESLINT_RULES = ({ javascript, typescript, react }) => {
   const commonRules = javascript || typescript ? COMMON_RULES : undefined;
   const reactRules = react ? REACT_RULES : undefined;
+  const typescriptReactRules =
+    react && typescript ? TYPESCRIPT_REACT_RULES : undefined;
 
   return {
     ...commonRules,
     ...reactRules,
+    ...typescriptReactRules,
     'prettier/prettier': [RULES.ERROR, GET_PRETTIER_OPTIONS(typescript)]
   };
 };

@@ -28,7 +28,7 @@ module.exports = {
         ignoreRestSiblings: false
       }
     ],
-    'no-undef': 2,
+    'no-undef': 0,
     'no-var': 2,
     'no-console': 1,
     'no-debugger': 2,
