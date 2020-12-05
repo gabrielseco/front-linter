@@ -1,7 +1,3 @@
-# [3.0.0-beta.8](https://github.com/gabrielseco/front-linter/compare/v3.0.0-beta.7...v3.0.0-beta.8) (2020-12-05)
-
-
-
 # Change Log
 All notable changes to this project will be documented in this file.
 
@@ -13,6 +9,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 ### Fixed
 ### Removed
+
+## [3.0.0-beta.8] 2020-12-05
+
+## Fixed
+
+- Fixed typescript with react no-undef for namespaces
 
 ## [3.0.0-beta.7] - 2020-11-08
 
