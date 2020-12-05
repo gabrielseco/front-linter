@@ -10,6 +10,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 ### Removed
 
+## [3.0.0-beta.8] 2020-12-05
+
+## Fixed
+
+- Fixed typescript with react no-undef for namespaces
+
 ## [3.0.0-beta.7] - 2020-11-08
 
 ## Changed
