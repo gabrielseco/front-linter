@@ -1,6 +1,6 @@
 {
   "name": "@rogal/front-linter",
-  "version": "3.0.0-beta.8",
+  "version": "3.0.0-beta.9",
   "description": "Linting CLI for Frontend Projects",
   "main": "./bin/front-linter.js",
   "bin": {
