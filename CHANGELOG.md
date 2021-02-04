@@ -10,7 +10,18 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 ### Removed
 
-## [3.0.0-beta.8] 2020-12-05
+# [3.0.0-beta.9] - 2021-02-04
+
+## Added
+
+- React perf plugin
+
+## Fixed
+
+- Fixed unit-blacklist deprecated rule
+
+
+## [3.0.0-beta.8] - 2020-12-05
 
 ## Fixed
 
