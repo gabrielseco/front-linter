@@ -17,7 +17,8 @@ module.exports = {
     'import',
     '@typescript-eslint',
     'react-hooks',
-    'jsx-a11y'
+    'jsx-a11y',
+    'react-perf'
   ],
   rules: {
     'no-unused-vars': [
@@ -102,6 +103,10 @@ module.exports = {
     ],
     'react-hooks/rules-of-hooks': 2,
     'react-hooks/exhaustive-deps': 1,
+    'react-perf/jsx-no-new-object-as-prop': 1,
+    'react-perf/jsx-no-new-array-as-prop': 1,
+    'react-perf/jsx-no-new-function-as-prop': 1,
+    'react-perf/jsx-no-jsx-as-prop': 1,
     'prettier/prettier': [
       2,
       {

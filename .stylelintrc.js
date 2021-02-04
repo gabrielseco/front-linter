@@ -34,6 +34,9 @@ module.exports = {
     'scss/at-import-no-partial-leading-underscore': null,
     'scss/at-mixin-pattern': null,
     'scss/dollar-variable-pattern': '.*',
-    'unit-blacklist': [['px', 'em']]
+    'unit-disallowed-list': [['px', 'em'], {ignoreMediaFeatureNames: {
+      "px": [ "min-width" ],
+      "dpi": [ "resolution" ]
+    }}]
   }
 };

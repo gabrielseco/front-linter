@@ -82,7 +82,11 @@ const REACT_RULES = {
     }
   ],
   'react-hooks/rules-of-hooks': RULES.ERROR,
-  'react-hooks/exhaustive-deps': RULES.WARNING
+  'react-hooks/exhaustive-deps': RULES.WARNING,
+  'react-perf/jsx-no-new-object-as-prop': RULES.WARNING,
+  'react-perf/jsx-no-new-array-as-prop': RULES.WARNING,
+  'react-perf/jsx-no-new-function-as-prop': RULES.WARNING,
+  'react-perf/jsx-no-jsx-as-prop': RULES.WARNING
 };
 
 const TYPESCRIPT_REACT_RULES = {
@@ -174,7 +178,7 @@ const GET_PLUGINS_ESLINT = ({ javascript, typescript, react }) => {
     javascript || typescript
       ? getCommonPlugins({ javascript, typescript })
       : [];
-  const reactPlugins = react ? ['react-hooks', 'jsx-a11y'] : [];
+  const reactPlugins = react ? ['react-hooks', 'jsx-a11y', 'react-perf'] : [];
 
   return [...commonPlugins, ...reactPlugins];
 };
