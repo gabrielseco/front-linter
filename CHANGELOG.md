@@ -1,7 +1,3 @@
-# [3.0.0-beta.9](https://github.com/gabrielseco/front-linter/compare/v3.0.0-beta.8...v3.0.0-beta.9) (2021-02-04)
-
-
-
 # Change Log
 All notable changes to this project will be documented in this file.
 
@@ -14,7 +10,18 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 ### Removed
 
-## [3.0.0-beta.8] 2020-12-05
+# [3.0.0-beta.9] - 2021-02-04
+
+## Added
+
+- React perf plugin
+
+## Fixed
+
+- Fixed unit-blacklist deprecated rule
+
+
+## [3.0.0-beta.8] - 2020-12-05
 
 ## Fixed
 
