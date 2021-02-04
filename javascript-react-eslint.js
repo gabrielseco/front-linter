@@ -11,7 +11,7 @@ module.exports = {
     'plugin:jsx-a11y/recommended'
   ],
   parser: 'babel-eslint',
-  plugins: ['prettier', 'import', 'react-hooks', 'jsx-a11y'],
+  plugins: ['prettier', 'import', 'react-hooks', 'jsx-a11y', 'react-perf'],
   rules: {
     'no-unused-vars': [
       1,
@@ -95,6 +95,10 @@ module.exports = {
     ],
     'react-hooks/rules-of-hooks': 2,
     'react-hooks/exhaustive-deps': 1,
+    'react-perf/jsx-no-new-object-as-prop': 1,
+    'react-perf/jsx-no-new-array-as-prop': 1,
+    'react-perf/jsx-no-new-function-as-prop': 1,
+    'react-perf/jsx-no-jsx-as-prop': 1,
     'prettier/prettier': [
       2,
       {
