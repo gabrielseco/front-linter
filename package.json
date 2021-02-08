@@ -37,7 +37,7 @@
     "stylelint": "13.9.0",
     "stylelint-config-sass-guidelines": "7.1.0",
     "stylelint-declaration-use-variable": "1.7.2",
-    "stylelint-scss": "3.18.0"
+    "stylelint-scss": "3.19.0"
   },
   "peerDependencies": {
     "eslint-import-resolver-typescript": "2.x"
