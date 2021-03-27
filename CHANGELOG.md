@@ -12,6 +12,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Breaking Changes
 
 
+# [4.0.0-beta.1] (2021-03-27)
+
+### Added
+
+- Typescript as peerDependency
+- Update Readme
+
 # [4.0.0-beta.0] (2021-03-27)
 
 ## Breaking Changes
