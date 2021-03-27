@@ -48,7 +48,7 @@ const getTypeOfFile = (presets) => {
   if (presets.includes(PRESET_TYPES.REACT)) {
     return PRESET_TYPES.REACT;
   }
-  return PRESET_TYPES.REACT;
+  return PRESET_TYPES.DEFAULT;
 };
 
 module.exports = {
