@@ -1,3 +1,7 @@
+# [4.0.0-beta.0](https://github.com/gabrielseco/front-linter/compare/v3.0.0-beta.10...v4.0.0-beta.0) (2021-03-27)
+
+
+
 # Change Log
 All notable changes to this project will be documented in this file.
 
