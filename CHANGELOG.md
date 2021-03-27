@@ -9,6 +9,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 ### Fixed
 ### Removed
+### Breaking Changes
+
+
+# [4.0.0-beta.0] (2021-03-27)
+
+## Breaking Changes
+
+- Introduce overrrides api
+- Change exposed configurations
 
 
 # [3.0.0-beta.10] 2021-03-27
