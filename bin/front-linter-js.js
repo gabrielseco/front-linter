@@ -20,11 +20,9 @@ const IGNORE_PATTERNS = ['lib', 'dist', 'public', 'node_modules'];
 
 const patterns = IGNORE_PATTERNS.concat(getGitIgnoredFiles());
 
-const presets = getPresetsFromCommandLine() || [PRESET_TYPES.JAVASCRIPT];
+const presets = getPresetsFromCommandLine() || [PRESET_TYPES.DEFAULT];
 
-const EXTENSIONS = presets.includes(PRESET_TYPES.TYPESCRIPT)
-  ? ['ts', 'tsx']
-  : ['js', 'jsx'];
+const EXTENSIONS = ['ts', 'tsx', 'js', 'jsx'];
 
 getFilesToLint(EXTENSIONS).then(
   (files) =>

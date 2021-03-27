@@ -89,8 +89,10 @@ const REACT_RULES = {
   'react-perf/jsx-no-jsx-as-prop': RULES.WARNING
 };
 
-const TYPESCRIPT_REACT_RULES = {
-  'no-undef': RULES.OFF
+const TYPESCRIPT_RULES = {
+  'no-undef': RULES.OFF,
+  'no-unused-vars': RULES.OFF,
+  '@typescript-eslint/no-unused-vars': [RULES.WARNING]
 };
 
 const GET_PRETTIER_OPTIONS = (typescript) => ({
@@ -98,12 +100,12 @@ const GET_PRETTIER_OPTIONS = (typescript) => ({
   parser: typescript ? 'typescript' : 'babel'
 });
 
-const GET_SETTINGS_REACT = ({ react, typescript }) => {
+const GET_SETTINGS = ({ reactPreset, typescriptPreset }) => {
   let settings = {
     settings: {}
   };
 
-  if (react) {
+  if (reactPreset) {
     settings = {
       ...settings,
       settings: {
@@ -116,7 +118,7 @@ const GET_SETTINGS_REACT = ({ react, typescript }) => {
     };
   }
 
-  if (typescript) {
+  if (typescriptPreset) {
     settings = {
       ...settings,
       settings: {
@@ -131,61 +133,57 @@ const GET_SETTINGS_REACT = ({ react, typescript }) => {
   return settings;
 };
 
-const GET_ESLINT_RULES = ({ javascript, typescript, react }) => {
-  const commonRules = javascript || typescript ? COMMON_RULES : undefined;
-  const reactRules = react ? REACT_RULES : undefined;
-  const typescriptReactRules =
-    react && typescript ? TYPESCRIPT_REACT_RULES : undefined;
+const GET_ESLINT_RULES = ({ reactPreset, typescriptPreset }) => {
+  const commonRules = COMMON_RULES;
+  const reactRules = reactPreset ? REACT_RULES : undefined;
+  const typescriptRules = typescriptPreset ? TYPESCRIPT_RULES : undefined;
 
   return {
     ...commonRules,
     ...reactRules,
-    ...typescriptReactRules,
-    'prettier/prettier': [RULES.ERROR, GET_PRETTIER_OPTIONS(typescript)]
+    ...typescriptRules,
+    'prettier/prettier': [RULES.ERROR, GET_PRETTIER_OPTIONS(typescriptPreset)]
   };
 };
 
-const getCommonExtends = ({ typescript }) => {
+const getCommonExtends = () => {
   const commonExtends = ['prettier'];
-  if (typescript) {
-    return [...commonExtends, 'plugin:@typescript-eslint/recommended'];
-  }
   return commonExtends;
 };
 
-const GET_EXTENDS_ESLINT = ({ javascript, typescript, react }) => {
-  const commonExtends =
-    javascript || typescript ? getCommonExtends({ typescript }) : [];
-  const reactExtends = react
+const GET_EXTENDS_ESLINT = ({ reactPreset, typescriptPreset }) => {
+  const commonExtends = getCommonExtends();
+  const reactExtends = reactPreset
     ? ['plugin:react/recommended', 'plugin:jsx-a11y/recommended']
     : ['plugin:import/recommended'];
 
-  return [...commonExtends, ...reactExtends];
+  const typescriptExtends = typescriptPreset
+    ? ['plugin:@typescript-eslint/recommended']
+    : [];
+
+  return [...commonExtends, ...reactExtends, ...typescriptExtends];
 };
 
-const getCommonPlugins = ({ typescript }) => {
+const getCommonPlugins = () => {
   const commonPlugins = ['prettier', 'import'];
-
-  if (typescript === true) {
-    return [...commonPlugins, '@typescript-eslint'];
-  }
 
   return commonPlugins;
 };
 
-const GET_PLUGINS_ESLINT = ({ javascript, typescript, react }) => {
-  const commonPlugins =
-    javascript || typescript
-      ? getCommonPlugins({ javascript, typescript })
-      : [];
-  const reactPlugins = react ? ['react-hooks', 'jsx-a11y', 'react-perf'] : [];
+const GET_PLUGINS_ESLINT = ({ reactPreset, typescriptPreset }) => {
+  const commonPlugins = getCommonPlugins();
+  const reactPlugins = reactPreset
+    ? ['react-hooks', 'jsx-a11y', 'react-perf']
+    : [];
 
-  return [...commonPlugins, ...reactPlugins];
+  const typescriptPlugins = typescriptPreset ? ['@typescript-eslint'] : [];
+
+  return [...commonPlugins, ...reactPlugins, ...typescriptPlugins];
 };
 
 module.exports = {
   GET_ESLINT_RULES,
   GET_EXTENDS_ESLINT,
   GET_PLUGINS_ESLINT,
-  GET_SETTINGS_REACT
+  GET_SETTINGS
 };

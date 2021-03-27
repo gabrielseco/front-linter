@@ -1,13 +1,10 @@
 const ESLINT_FILES = {
-  defaultPreset: require.resolve('./../default-preset-eslint.js'),
-  typescriptPreset: require.resolve('./../typescript-preset-eslint.js'),
-  reactJavascript: require.resolve('./../javascript-react-eslint.js'),
-  reactTypescript: require.resolve('./../typescript-react-eslint.js')
+  defaultPreset: require.resolve('./../eslint.js'),
+  reactPreset: require.resolve('./../eslint-react.js')
 };
 
 const PRESET_TYPES = {
-  JAVASCRIPT: 'javascript',
-  TYPESCRIPT: 'typescript',
+  DEFAULT: 'default',
   REACT: 'react'
 };
 
@@ -27,7 +24,7 @@ const getPresetsFromCommandLine = () => {
   }
 
   throw new Error(
-    'Pass me the presets arguments like front-linter js -- --presets=javascript'
+    `Pass me the presets arguments like front-linter js -- --presets=${PRESET_TYPES.REACT}`
   );
 };
 
@@ -36,45 +33,11 @@ const getPresetsFromCommandLine = () => {
  * @return an eslint file is returned
  */
 const getEslintFilePreset = (presets) => {
-  if (
-    presets.includes(PRESET_TYPES.JAVASCRIPT) &&
-    !presets.includes(PRESET_TYPES.TYPESCRIPT) &&
-    !presets.includes(PRESET_TYPES.REACT)
-  ) {
-    return ESLINT_FILES.defaultPreset;
+  if (presets && presets.includes(PRESET_TYPES.REACT)) {
+    return ESLINT_FILES.reactPreset;
   }
 
-  if (
-    !presets.includes(PRESET_TYPES.JAVASCRIPT) &&
-    presets.includes(PRESET_TYPES.TYPESCRIPT) &&
-    !presets.includes(PRESET_TYPES.REACT)
-  ) {
-    return ESLINT_FILES.typescriptPreset;
-  }
-
-  if (
-    presets.includes(PRESET_TYPES.JAVASCRIPT) &&
-    presets.includes(PRESET_TYPES.REACT) &&
-    !presets.includes(PRESET_TYPES.TYPESCRIPT)
-  ) {
-    return ESLINT_FILES.reactJavascript;
-  }
-
-  if (
-    presets.includes(PRESET_TYPES.TYPESCRIPT) &&
-    !presets.includes(PRESET_TYPES.JAVASCRIPT) &&
-    !presets.includes(PRESET_TYPES.REACT)
-  ) {
-    return ESLINT_FILES.defaultPreset;
-  }
-
-  if (
-    presets.includes(PRESET_TYPES.TYPESCRIPT) &&
-    presets.includes(PRESET_TYPES.REACT) &&
-    !presets.includes(PRESET_TYPES.JAVASCRIPT)
-  ) {
-    return ESLINT_FILES.reactTypescript;
-  }
+  return ESLINT_FILES.defaultPreset;
 };
 
 /**
@@ -82,12 +45,10 @@ const getEslintFilePreset = (presets) => {
  * @return a type of file is returned
  */
 const getTypeOfFile = (presets) => {
-  if (presets.includes(PRESET_TYPES.JAVASCRIPT)) {
-    return PRESET_TYPES.JAVASCRIPT;
+  if (presets.includes(PRESET_TYPES.REACT)) {
+    return PRESET_TYPES.REACT;
   }
-  if (presets.includes(PRESET_TYPES.TYPESCRIPT)) {
-    return PRESET_TYPES.TYPESCRIPT;
-  }
+  return PRESET_TYPES.REACT;
 };
 
 module.exports = {
