@@ -26,39 +26,18 @@ When installed, a new CLI `front-linter` is automatically available to lint your
 $ front-linter js [options]
 ```
 
-It lints all `js|jsx` files in your project, excluding `.eslintignore` and `.gitignore` file patterns.
+It lints all `js|jsx|ts|tsx` files in your project, excluding `.eslintignore` and `.gitignore` file patterns.
 
 Same options available in [eslint](https://eslint.org/docs/user-guide/command-line-interface) except one: `-c, --config`. If you try to use this option, an exception will be thrown.
 
 
 
-### Format JS files
+### Format JS/TS files
 
 ```sh
 $ front-linter js --fix [options]
 ```
 
-
-### Lint Typescript files 
-```sh
-$ front-linter js -- --presets=typescript [options]
-```
-
-It lints all `ts|tsx|js|jsx` files in your project, excluding `.eslintignore` and `.gitignore` file patterns.
-
-Same options available in [eslint](https://eslint.org/docs/user-guide/command-line-interface) except one: `-c, --config`. If you try to use this option, an exception will be thrown.
-
-For typescript you'll need to install the **eslint-import-resolver-typescript**
-
-```js
-  npm i --save-dev eslint-import-resolver-typescript
-```
-
-### Format TS files
-
-```sh
-$ front-linter  -- --presets=typescript --fix [options]
-```
 
 
 ### Lint SASS files
@@ -76,12 +55,12 @@ Lints all `**/src/**/*.scss` files in the project, excluding `node_modules`, `li
 
 Now we have three presets.
 
-You have the preset javascript, typescript and react
+You have the preset default and react
 
-You can combine react with javascript or typescript with react
+You can combine react with javascript or typescript
 
 ```sh
-$ front-linter js -- --presets=javascript,react
+$ front-linter js -- --presets=default,react
 ```
 
 ```sh
@@ -123,7 +102,7 @@ Steps to integrate front-linter with an IDE:
 ```json
 {
   "eslintConfig": {
-    "extends": ["./node_modules/@rogal/front-linter/javascript-react-eslint.js"]
+    "extends": ["./node_modules/@rogal/front-linter/eslint-react.js"]
   },
   "stylelint": {
     "extends": [
