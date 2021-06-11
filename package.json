@@ -10,7 +10,7 @@
     "build": "",
     "test": "",
     "build-lint-files": "node scripts/createEslintFiles",
-    "lint": "./node_modules/.bin/eslint --config=./eslint.js bin src eslint-react.js .prettierrc.js --ignore-pattern !.prettierrc.js",
+    "lint": "./node_modules/.bin/eslint --config=./eslint.js bin src eslint-react.js .prettierrc.js .stylelintrc.js",
     "release:prepare": "shipjs prepare",
     "release:trigger": "shipjs trigger"
   },
@@ -36,7 +36,7 @@
     "simple-git": "1.132.0",
     "stylelint": "13.13.1",
     "stylelint-config-sass-guidelines": "8.0.0",
-    "stylelint-declaration-use-variable": "1.7.2",
+    "stylelint-declaration-strict-value": "1.7.12",
     "stylelint-scss": "3.19.0"
   },
   "peerDependencies": {

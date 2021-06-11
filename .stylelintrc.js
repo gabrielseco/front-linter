@@ -1,5 +1,5 @@
 module.exports = {
-  plugins: ['stylelint-declaration-use-variable', 'stylelint-scss'],
+  plugins: ['stylelint-scss', 'stylelint-declaration-strict-value'],
   ignoreFiles: '**/*.js',
   extends: ['stylelint-config-sass-guidelines'],
   rules: {
@@ -19,24 +19,24 @@ module.exports = {
       }
     ],
     'string-quotes': 'double',
-    'sh-waqar/declaration-use-variable': [
-      [
-        'background',
-        'box-shadow',
-        '/color/',
-        'z-index',
-        {
-          ignoreValues: ['transparent', 'inherit']
-        }
-      ]
+    'scale-unlimited/declaration-strict-value': [
+      ['/color$/', 'box-shadow', 'background', 'z-index'],
+      {
+        ignoreValues: ['currentColor', 'transparent', 'inherit']
+      }
     ],
     'scss/at-extend-no-missing-placeholder': null,
     'scss/at-import-no-partial-leading-underscore': null,
     'scss/at-mixin-pattern': null,
     'scss/dollar-variable-pattern': '.*',
-    'unit-disallowed-list': [['px', 'em'], {ignoreMediaFeatureNames: {
-      "px": [ "min-width" ],
-      "dpi": [ "resolution" ]
-    }}]
+    'unit-disallowed-list': [
+      ['px', 'em'],
+      {
+        ignoreMediaFeatureNames: {
+          px: ['min-width'],
+          dpi: ['resolution']
+        }
+      }
+    ]
   }
 };

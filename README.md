@@ -55,9 +55,9 @@ Lints all `**/src/**/*.scss` files in the project, excluding `node_modules`, `li
 
 Now we have three presets.
 
-You have the preset default and react
+We have 3 presets: **default**, **typescript** y **react**
 
-You can combine react with javascript or typescript
+You can combine react with default or typescript
 
 ```sh
 $ front-linter js -- --presets=default,react
@@ -122,7 +122,7 @@ Steps to integrate front-linter with an IDE:
 ```json
 {
   "eslintConfig": {
-    "extends": ["./node_modules/@rogal/front-linter/typescript-react-eslint.js"]
+    "extends": ["./node_modules/@rogal/front-linter/eslint-react.js"]
   },
   "stylelint": {
     "extends": [
@@ -142,10 +142,7 @@ Steps to integrate front-linter with an IDE:
     "lint:js": "front-linter js",
     "lint:sass": "front-linter sass"
   },
-  "devDependencies": {
-    "@rogal/front-linter": "1.0.0"
-  },
-  "eslintConfig": { "extends": ["./node_modules/@rogal/front-linter/default-preset-eslint.js"] },
+  "eslintConfig": { "extends": ["./node_modules/@rogal/front-linter/eslint.js"] },
   "stylelint": {
     "extends": [
       "./node_modules/@rogal/front-linter/.stylelintrc.js"
@@ -164,10 +161,7 @@ Steps to integrate front-linter with an IDE:
     "lint:ts": "front-linter js -- --presets=typescript",
     "lint:sass": "front-linter sass"
   },
-  "devDependencies": {
-    "@rogal/front-linter": "1.0.0"
-  },
-  "eslintConfig": { "extends": ["./node_modules/@rogal/front-linter/typescript-react-eslint.js"] },
+  "eslintConfig": { "extends": ["./node_modules/@rogal/front-linter/eslint.js"] },
   "stylelint": {
     "extends": [
       "./node_modules/@rogal/front-linter/.stylelintrc.js"
