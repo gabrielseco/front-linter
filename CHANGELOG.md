@@ -1,7 +1,3 @@
-# [4.0.0-beta.3](https://github.com/gabrielseco/front-linter/compare/v4.0.0-beta.2...v4.0.0-beta.3) (2021-06-11)
-
-
-
 # Change Log
 All notable changes to this project will be documented in this file.
 
@@ -14,6 +10,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 ### Removed
 ### Breaking Changes
+
+# [4.0.0-beta.3] (2021-06-11)
+
+- Replaced stylelint deprecated package 
 
 # [4.0.0-beta.2] (2021-06-09)
 
