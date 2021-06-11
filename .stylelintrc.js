@@ -20,7 +20,7 @@ module.exports = {
     ],
     'string-quotes': 'double',
     'scale-unlimited/declaration-strict-value': [
-      ['/color$/', 'box-shadow', 'background', 'font-size'],
+      ['/color$/', 'box-shadow', 'background', 'z-index'],
       {
         ignoreValues: ['currentColor', 'transparent', 'inherit']
       }
