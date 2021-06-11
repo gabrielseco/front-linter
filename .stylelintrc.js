@@ -19,11 +19,9 @@ module.exports = {
       }
     ],
     'string-quotes': 'double',
-    "scale-unlimited/declaration-strict-value": [
-      ["/color$/", "z-index", "font-size", "background", "box-shadow", {
-          ignoreValues: ['transparent', 'inherit', 'currentColor']
-      }]
-    ],
+    "scale-unlimited/declaration-strict-value": [["/color$/", "box-shadow", 'background', 'font-size'], {
+      ignoreValues: ["currentColor", "transparent", "inherit"],
+    }],
     'scss/at-extend-no-missing-placeholder': null,
     'scss/at-import-no-partial-leading-underscore': null,
     'scss/at-mixin-pattern': null,
