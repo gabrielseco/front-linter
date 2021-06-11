@@ -10,7 +10,7 @@
     "build": "",
     "test": "",
     "build-lint-files": "node scripts/createEslintFiles",
-    "lint": "./node_modules/.bin/eslint --config=./eslint.js bin src eslint-react.js .prettierrc.js --ignore-pattern !.prettierrc.js",
+    "lint": "./node_modules/.bin/eslint --config=./eslint.js bin src eslint-react.js .prettierrc.js .stylelintrc.js",
     "release:prepare": "shipjs prepare",
     "release:trigger": "shipjs trigger"
   },
