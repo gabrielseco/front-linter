@@ -6,7 +6,10 @@ module.exports = {
     jest: true
   },
   extends: ['prettier', 'plugin:import/recommended'],
-  parser: 'babel-eslint',
+  parser: '@babel/eslint-parser',
+  parserOptions: {
+    requireConfigFile: false
+  },
   plugins: ['prettier', 'import'],
   rules: {
     'no-unused-vars': [
@@ -49,7 +52,7 @@ module.exports = {
         semi: true,
         useTabs: false,
         parser: 'babel',
-        jsxBracketSameLine: false,
+        bracketSameLine: false,
         arrowParens: 'always',
         quoteProps: 'consistent'
       }
@@ -106,7 +109,7 @@ module.exports = {
             semi: true,
             useTabs: false,
             parser: 'typescript',
-            jsxBracketSameLine: false,
+            bracketSameLine: false,
             arrowParens: 'always',
             quoteProps: 'consistent'
           }

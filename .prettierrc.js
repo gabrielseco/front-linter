@@ -7,7 +7,7 @@ module.exports = {
   semi: true,
   useTabs: false,
   parser: 'babel',
-  jsxBracketSameLine: false,
+  bracketSameLine: false,
   arrowParens: 'avoid',
   quoteProps: 'consistent',
   arrowParens: 'always'
