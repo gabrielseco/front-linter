@@ -11,6 +11,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 ### Breaking Changes
 
+# [4.0.0-beta.4] (2022-01-22)
+
+### Changed
+- Updated dependencies to make typescript work 
+
 # [4.0.0-beta.3] (2021-06-11)
 
 - Replaced stylelint deprecated package 
