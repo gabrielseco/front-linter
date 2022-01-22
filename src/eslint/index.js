@@ -43,7 +43,10 @@ const CONFIG = (presets) => {
   const defaultConfig = {
     env: getEslintEnv(),
     extends: GET_EXTENDS_ESLINT(AVAILABLE_PRESETS_OPTIONS(presets)),
-    parser: 'babel-eslint',
+    parser: '@babel/eslint-parser',
+    parserOptions: {
+      requireConfigFile: false
+    },
     plugins: GET_PLUGINS_ESLINT(AVAILABLE_PRESETS_OPTIONS(presets)),
     rules: GET_ESLINT_RULES(AVAILABLE_PRESETS_OPTIONS(presets)),
     ...GET_SETTINGS(AVAILABLE_PRESETS_OPTIONS(presets)),

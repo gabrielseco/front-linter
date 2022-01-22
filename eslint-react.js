@@ -10,7 +10,10 @@ module.exports = {
     'plugin:react/recommended',
     'plugin:jsx-a11y/recommended'
   ],
-  parser: 'babel-eslint',
+  parser: '@babel/eslint-parser',
+  parserOptions: {
+    requireConfigFile: false
+  },
   plugins: ['prettier', 'import', 'react-hooks', 'jsx-a11y', 'react-perf'],
   rules: {
     'no-unused-vars': [
@@ -110,7 +113,7 @@ module.exports = {
         semi: true,
         useTabs: false,
         parser: 'babel',
-        jsxBracketSameLine: false,
+        bracketSameLine: false,
         arrowParens: 'always',
         quoteProps: 'consistent'
       }
@@ -237,7 +240,7 @@ module.exports = {
             semi: true,
             useTabs: false,
             parser: 'typescript',
-            jsxBracketSameLine: false,
+            bracketSameLine: false,
             arrowParens: 'always',
             quoteProps: 'consistent'
           }
