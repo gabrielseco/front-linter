@@ -15,11 +15,9 @@ const {
   getEslintFilePreset
 } = require('../src/presets');
 
-const { CI } = process.env;
-
 const IGNORE_PATTERNS = ['lib', 'dist', 'public', 'node_modules'];
 const DEFAULT_PATTERN = './';
-const formatterName = CI ? 'stylish' : 'codeframe';
+const formatterName = 'codeframe';
 
 const presets = getPresetsFromCommandLine() || [PRESET_TYPES.DEFAULT];
 
@@ -64,9 +62,8 @@ const baseConfig = {
   // check formatter
   const formatter = await eslint.loadFormatter(formatterName);
   const errors = ESLint.getErrorResults(results);
-  // check CI variable
-  const resultsToShow = CI ? errors : results;
-  const resultText = formatter.format(resultsToShow);
+
+  const resultText = formatter.format(results);
 
   console.log(resultText);
 
