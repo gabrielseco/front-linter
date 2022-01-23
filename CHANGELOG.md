@@ -1,7 +1,3 @@
-# [4.0.0-beta.5](https://github.com/gabrielseco/front-linter/compare/v4.0.0-beta.4...v4.0.0-beta.5) (2022-01-23)
-
-
-
 # Change Log
 All notable changes to this project will be documented in this file.
 
@@ -15,9 +11,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 ### Breaking Changes
 
-# [4.0.0-beta.4] (2022-01-22)
+# [4.0.0-beta.5](2022-01-23)
 
 ### Changed
+
+- Changed the front-linter internals
+
+# [4.0.0-beta.4] (2022-01-22)
+
+### Changed (Not working)
 - Updated dependencies to make typescript work 
 
 # [4.0.0-beta.3] (2021-06-11)
