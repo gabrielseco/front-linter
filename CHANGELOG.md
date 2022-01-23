@@ -11,9 +11,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 ### Breaking Changes
 
-# [4.0.0-beta.4] (2022-01-22)
+# [4.0.0-beta.5](2022-01-23)
 
 ### Changed
+
+- Changed the front-linter internals
+
+# [4.0.0-beta.4] (2022-01-22)
+
+### Changed (Not working)
 - Updated dependencies to make typescript work 
 
 # [4.0.0-beta.3] (2021-06-11)
