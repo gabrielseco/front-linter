@@ -2,10 +2,6 @@
 const { spawn } = require('child_process');
 const path = require('path');
 
-const colors = require('colors');
-const program = require('commander');
-const figures = require('figures');
-
 const CODE_OK = 0;
 const log = console.log;
 
@@ -76,28 +72,6 @@ function getCommandCallMessage(bin, args, options = {}) {
   return `${command} ${folder.grey}`;
 }
 
-/*
- * Shows an error in the command line and exits process
- * It also outputs help content of the command
- * The program param will have commander instance to output the help command
- * @param  {String} msg
- * @param  {Object} foreignProgram
- * @return
- */
-const showError = (msg, foreignProgram) => {
-  const logRed = (txt) => console.log(colors.red(txt));
-  logRed(
-    `\n${figures.cross} An error occurred during command execution. Info:\n`
-  );
-  logRed(colors.red(msg)); // eslint-disable-line no-console
-  foreignProgram
-    ? foreignProgram.outputHelp((txt) => txt)
-    : program.outputHelp((txt) => txt);
-
-  process.exit(1);
-};
-
 module.exports = {
-  getSpawnPromise,
-  showError
+  getSpawnPromise
 };

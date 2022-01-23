@@ -1,6 +1,6 @@
 const ESLINT_FILES = {
-  defaultPreset: require.resolve('./../eslint.js'),
-  reactPreset: require.resolve('./../eslint-react.js')
+  defaultPreset: require('./../eslint.js'),
+  reactPreset: require('./../eslint-react.js')
 };
 
 const PRESET_TYPES = {
