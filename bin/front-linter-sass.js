@@ -4,7 +4,7 @@
 const stylelint = require('stylelint');
 const program = require('commander');
 
-const config = require('../stylelintrc.js');
+const config = require('../.stylelintrc.js');
 const {
   checkFilesToLint,
   getGitIgnoredFiles,
@@ -51,7 +51,7 @@ getFilesToLint(EXTENSIONS, program.pattern).then((files) => {
       console.log(output);
 
       if (errored) {
-        throw new Error('You must fix linting errores before continuing...');
+        throw new Error('You must fix linting errors before continuing...');
       }
     })
     .catch((error) => {
