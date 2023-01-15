@@ -11,6 +11,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 ### Breaking Changes
 
+# [4.0.0-beta.7](2023-01-15)
+
+### Fix
+
+- Fix sass commands
+
 # [4.0.0-beta.6] (2022-01-23)
 
 ### Fix
