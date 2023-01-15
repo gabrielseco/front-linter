@@ -1,7 +1,3 @@
-# [4.0.0-beta.7](https://github.com/gabrielseco/front-linter/compare/v4.0.0-beta.6...v4.0.0-beta.7) (2023-01-15)
-
-
-
 # Change Log
 All notable changes to this project will be documented in this file.
 
@@ -14,6 +10,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 ### Removed
 ### Breaking Changes
+
+# [4.0.0-beta.7](2023-01-15)
+
+### Fix
+
+- Fix sass commands
 
 # [4.0.0-beta.6] (2022-01-23)
 
