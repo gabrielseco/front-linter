@@ -2,34 +2,27 @@
 /* eslint-disable no-console */
 
 const stylelint = require('stylelint');
-const program = require('commander');
 
 const config = require('../.stylelintrc.js');
 const {
   checkFilesToLint,
   getGitIgnoredFiles,
-  getFilesToLint
+  getFilesToLint,
+  isOptionSet
 } = require('../src/helpers');
 
 const EXTENSIONS = ['scss'];
 const IGNORE_PATTERNS = ['**/node_modules/**', '**/lib/**', '**/dist/**'];
 const DEFAULT_PATTERN = '**/*.scss';
+const fix = isOptionSet('fix');
 
-program
-  .option('--add-fixes')
-  .option('--staged')
-  .option('--fix', 'fix automatically problems with sass files')
-  .option(
-    '--pattern <pattern>',
-    'root path to locate the sass files',
-    DEFAULT_PATTERN
-  )
-  .parse(process.argv);
+(async function main() {
+  const files = await getFilesToLint(EXTENSIONS, DEFAULT_PATTERN);
 
-getFilesToLint(EXTENSIONS, program.pattern).then((files) => {
   if (
     !checkFilesToLint({
       files,
+      fix: fix,
       language: 'SCSS',
       defaultPattern: DEFAULT_PATTERN
     })
@@ -40,6 +33,7 @@ getFilesToLint(EXTENSIONS, program.pattern).then((files) => {
   return stylelint
     .lint({
       files,
+      fix: fix,
       formatter: 'string',
       syntax: 'scss',
       config: {
@@ -53,9 +47,8 @@ getFilesToLint(EXTENSIONS, program.pattern).then((files) => {
       if (errored) {
         throw new Error('You must fix linting errors before continuing...');
       }
-    })
-    .catch((error) => {
-      process.exitCode = 1;
-      console.error('[front-linter]', error);
     });
+})().catch((error) => {
+  process.exitCode = 1;
+  console.error('[front-linter]', error);
 });

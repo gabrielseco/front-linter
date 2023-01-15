@@ -30,6 +30,8 @@ const baseConfig = {
   ignorePatterns: IGNORE_PATTERNS.concat(getGitIgnoredFiles())
 };
 
+const fix = isOptionSet('fix');
+
 (async function main() {
   const files = await getFilesToLint(EXTENSIONS, DEFAULT_PATTERN);
   if (
@@ -42,7 +44,6 @@ const baseConfig = {
     return;
   }
 
-  const fix = isOptionSet('fix');
   // check config passing to eslint
   const eslint = new ESLint({
     baseConfig,
@@ -72,5 +73,5 @@ const baseConfig = {
   }
 })().catch((error) => {
   process.exitCode = 1;
-  console.error('[sui-lint]', error);
+  console.error('[front-linter]', error);
 });
